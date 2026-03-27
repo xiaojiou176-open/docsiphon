@@ -1,0 +1,10 @@
+[profile]
+output_dir = "./_outputs"
+site_root = "auto"
+scope_prefix = "/services/canvas"
+max_pages = 6
+frontmatter = true
+save_html = false
+manifest_sorted = true
+request_timeout = 20
+rate_limit_per_sec = 5.0

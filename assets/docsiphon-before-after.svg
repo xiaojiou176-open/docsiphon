@@ -11,40 +11,52 @@
     </filter>
   </defs>
   <rect width="1600" height="920" fill="url(#bg)"/>
-  <text x="100" y="110" fill="#f8fafc" font-size="48" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">From docsite chaos to an AI-ready local corpus</text>
-  <text x="100" y="156" fill="#cbd5e1" font-size="24" font-family="SF Pro Text, Inter, Arial, sans-serif">What changes when you move from manual export or generic mirroring to Docsiphon.</text>
+
+  <text x="100" y="112" fill="#f8fafc" font-size="44" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">From docsite chaos</text>
+  <text x="100" y="160" fill="#f8fafc" font-size="44" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">to an AI-ready local corpus</text>
+  <text x="100" y="210" fill="#cbd5e1" font-size="23" font-family="SF Pro Text, Inter, Arial, sans-serif">What changes when you move from manual export or generic mirroring</text>
+  <text x="100" y="242" fill="#cbd5e1" font-size="23" font-family="SF Pro Text, Inter, Arial, sans-serif">to a reviewable Docsiphon run.</text>
 
   <g filter="url(#shadow)">
-    <rect x="90" y="220" width="660" height="610" rx="34" fill="#111827" stroke="#7f1d1d" stroke-width="2"/>
-    <rect x="850" y="220" width="660" height="610" rx="34" fill="#0b1220" stroke="#155e75" stroke-width="2"/>
+    <rect x="90" y="280" width="660" height="554" rx="34" fill="#111827" stroke="#7f1d1d" stroke-width="2"/>
+    <rect x="850" y="280" width="660" height="554" rx="34" fill="#0b1220" stroke="#155e75" stroke-width="2"/>
   </g>
 
-  <text x="130" y="290" fill="#fca5a5" font-size="34" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Before: manual copy, raw crawler, generic mirror</text>
-  <text x="890" y="290" fill="#67e8f9" font-size="34" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">After: Docsiphon</text>
+  <rect x="130" y="316" width="104" height="36" rx="18" fill="#2a1316" stroke="#7f1d1d"/>
+  <text x="162" y="339" fill="#fca5a5" font-size="20" font-family="SF Mono, Menlo, monospace" font-weight="700">Before</text>
+  <text x="130" y="390" fill="#f8fafc" font-size="30" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Manual copy, raw crawler,</text>
+  <text x="130" y="426" fill="#f8fafc" font-size="30" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">or generic mirror</text>
 
-  <g font-family="SF Mono, Menlo, monospace" font-size="22">
-    <text x="130" y="360" fill="#fecaca">HTML dumps with weak path semantics</text>
-    <text x="130" y="406" fill="#fecaca">No manifest or run ledger</text>
-    <text x="130" y="452" fill="#fecaca">Hard to review what happened</text>
-    <text x="130" y="498" fill="#fecaca">Markdown often lost or inconsistent</text>
-    <text x="130" y="544" fill="#fecaca">Resume behavior varies or does not exist</text>
-    <text x="130" y="590" fill="#fecaca">Poor handoff for AI / RAG prep</text>
+  <rect x="890" y="316" width="92" height="36" rx="18" fill="#0d2330" stroke="#155e75"/>
+  <text x="922" y="339" fill="#67e8f9" font-size="20" font-family="SF Mono, Menlo, monospace" font-weight="700">After</text>
+  <text x="890" y="390" fill="#f8fafc" font-size="30" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Docsiphon keeps the export</text>
+  <text x="890" y="426" fill="#f8fafc" font-size="30" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">reviewable and reusable</text>
+
+  <g font-family="SF Mono, Menlo, monospace" font-size="21">
+    <text x="130" y="500" fill="#fecaca">HTML dumps with weak path semantics</text>
+    <text x="130" y="542" fill="#fecaca">No manifest or run ledger</text>
+    <text x="130" y="584" fill="#fecaca">Hard to review what happened</text>
+    <text x="130" y="626" fill="#fecaca">Markdown often lost or inconsistent</text>
+    <text x="130" y="668" fill="#fecaca">Resume behavior varies or does not exist</text>
+    <text x="130" y="710" fill="#fecaca">Poor handoff for AI / RAG prep</text>
   </g>
 
-  <g font-family="SF Mono, Menlo, monospace" font-size="22">
-    <text x="890" y="360" fill="#cffafe">Preserved path hierarchy</text>
-    <text x="890" y="406" fill="#cffafe">Markdown-first fetch, HTML fallback</text>
-    <text x="890" y="452" fill="#cffafe">manifest.jsonl page ledger</text>
-    <text x="890" y="498" fill="#cffafe">report.json + report.html + toc.md</text>
-    <text x="890" y="544" fill="#cffafe">Resume and skip-existing workflow</text>
-    <text x="890" y="590" fill="#cffafe">Better fit for chunking, embedding, review</text>
+  <g font-family="SF Mono, Menlo, monospace" font-size="21">
+    <text x="890" y="500" fill="#cffafe">Preserved path hierarchy</text>
+    <text x="890" y="542" fill="#cffafe">Markdown-first fetch, HTML fallback</text>
+    <text x="890" y="584" fill="#cffafe">manifest.jsonl page ledger</text>
+    <text x="890" y="626" fill="#cffafe">report.json + report.html + toc.md</text>
+    <text x="890" y="668" fill="#cffafe">Resume and skip-existing workflow</text>
+    <text x="890" y="710" fill="#cffafe">Better fit for chunking, embedding, review</text>
   </g>
 
-  <rect x="130" y="650" width="580" height="120" rx="22" fill="#020617" stroke="#7f1d1d"/>
-  <text x="165" y="700" fill="#f8fafc" font-size="24" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Typical failure mode</text>
-  <text x="165" y="738" fill="#cbd5e1" font-size="20" font-family="SF Pro Text, Inter, Arial, sans-serif">"Technically we fetched it" but nobody can tell what was exported, skipped, or mapped.</text>
+  <rect x="130" y="742" width="580" height="84" rx="22" fill="#020617" stroke="#7f1d1d"/>
+  <text x="164" y="778" fill="#f8fafc" font-size="22" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Typical failure mode</text>
+  <text x="164" y="804" fill="#cbd5e1" font-size="17" font-family="SF Pro Text, Inter, Arial, sans-serif">"Technically we fetched it," but nobody can tell what was exported,</text>
+  <text x="164" y="826" fill="#cbd5e1" font-size="17" font-family="SF Pro Text, Inter, Arial, sans-serif">skipped, or mapped.</text>
 
-  <rect x="890" y="650" width="580" height="120" rx="22" fill="#020617" stroke="#155e75"/>
-  <text x="925" y="700" fill="#f8fafc" font-size="24" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Docsiphon outcome</text>
-  <text x="925" y="738" fill="#cbd5e1" font-size="20" font-family="SF Pro Text, Inter, Arial, sans-serif">A local Markdown tree with run metadata, review surfaces, and outputs you can trust again later.</text>
+  <rect x="890" y="742" width="580" height="84" rx="22" fill="#020617" stroke="#155e75"/>
+  <text x="924" y="778" fill="#f8fafc" font-size="22" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Docsiphon outcome</text>
+  <text x="924" y="804" fill="#cbd5e1" font-size="17" font-family="SF Pro Text, Inter, Arial, sans-serif">A local Markdown tree with run metadata, review surfaces,</text>
+  <text x="924" y="826" fill="#cbd5e1" font-size="17" font-family="SF Pro Text, Inter, Arial, sans-serif">and outputs you can trust again later.</text>
 </svg>

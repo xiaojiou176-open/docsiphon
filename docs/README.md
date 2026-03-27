@@ -1,66 +1,51 @@
-# Documentation Map
+---
+title: Docs Surface README
+description: Thin repository-side companion for the Docsiphon Pages surface.
+---
 
-This repository keeps a deliberately thin but high-signal docs surface.
+# Docs Surface README
 
-Use the root [README](../README.md) as the front door. Use this file when you
-need the repository map, the execution model, or the support boundary in one
-place.
+This file is the repo-side companion to the Pages docs surface.
 
-## Execution Model
+Use the GitHub repo front door when you want the full onboarding story. Use the
+rendered Pages map when you want the shortest HTML path through the public docs
+surface.
 
-Docsiphon is a CLI-driven export pipeline:
+## Canonical Entrypoints
 
-1. parse CLI arguments and optional profile settings
-2. discover candidate URLs through `llms.txt`, sitemap, search index, or BFS
-3. filter and normalize the candidate set
-4. export each page through Markdown-first fetch with HTML fallback
-5. write page artifacts and derived run artifacts
+- Full README:
+  [GitHub repository front door](https://github.com/xiaojiou176-open/docsiphon#readme)
+- Pages home:
+  [Docs landing page](https://xiaojiou176-open.github.io/docsiphon/)
+- Pages repo map:
+  [Repo map](https://xiaojiou176-open.github.io/docsiphon/repo-map/)
+- Pages roadmap:
+  [Roadmap](https://xiaojiou176-open.github.io/docsiphon/roadmap/)
+- Latest public release:
+  [Release entrypoint](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
 
-The source package lives in `src/docsiphon/`. The repository does not expose a
-service layer or hosted API. Treat the root README as the landing page for
-first-time users, and this file as the operator map for understanding what is
-inside the repository.
+## What Lives Where
 
-## Output Semantics
-
-The supported output root is `_outputs/`.
-
-Important run artifacts:
-
-- `manifest.jsonl`: page-level ledger
-- `report.json`: run summary
-- `index.json`: derived machine-readable index
-- `toc.md`: directory tree view
-- `report.html`: human-readable report
-- `_errors/`: sampled error snapshots
-
-Generated outputs are operator data and must stay out of Git.
+- `docs/index.md`: the smallest public landing page for Pages visitors
+- `docs/repo-map.md`: the rendered HTML map for repository structure and support
+  boundaries
+- `docs/roadmap.md`: the stable public roadmap summary
+- `README.md`: the full project front door with install, usage, and verification
+  guidance
 
 ## Verification Entry Points
 
-```bash
-uv run python scripts/check_contracts.py
-uv run python scripts/check_repo_hygiene.py
-uv run pre-commit run --all-files
-uv run pytest tests
-uv run docsiphon --help
-```
+For the full contributor verification commands, use
+[`CONTRIBUTING.md`](../CONTRIBUTING.md). This thin docs surface keeps only the
+public routing and support boundary, not a second copy of the full verification
+playbook.
 
 ## Support Boundary
 
-- `scripts/verify_instructure.sh` is a public example probe, not a compatibility
-  guarantee for every vendor
-- `.github/release-body-v0.1.1.md` is a release draft artifact, not evidence
-  that a public release tag already exists
-- `CODEOWNERS`, PR templates, and Issue templates are part of the live
-  collaboration contract
-- `SECURITY.md` defines private reporting expectations
+- Docsiphon is a CLI export pipeline, not a hosted API or managed service
+- `scripts/verify_instructure.sh` is a public example probe, not a vendor-wide
+  compatibility promise
+- `CODEOWNERS`, PR templates, and Issue templates are part of the collaboration
+  contract
 - `SUPPORT.md` defines the best-effort maintainer support scope
-
-## Canonical Sources
-
-- project overview and common commands: [README.md](../README.md)
-- release draft for the next public polish pass: [../.github/release-body-v0.1.1.md](../.github/release-body-v0.1.1.md)
-- contribution workflow: [CONTRIBUTING.md](../CONTRIBUTING.md)
-- support policy: [SUPPORT.md](../SUPPORT.md)
-- security reporting: [SECURITY.md](../SECURITY.md)
+- `SECURITY.md` defines private reporting expectations

@@ -26,70 +26,78 @@
   <circle cx="180" cy="820" r="250" fill="#22c55e" fill-opacity="0.10"/>
 
   <g filter="url(#shadow)">
-    <rect x="80" y="90" width="670" height="800" rx="34" fill="url(#panel)" stroke="#334155" stroke-width="2"/>
-    <rect x="850" y="150" width="670" height="680" rx="34" fill="url(#panel)" stroke="#334155" stroke-width="2"/>
+    <rect x="80" y="90" width="690" height="800" rx="34" fill="url(#panel)" stroke="#334155" stroke-width="2"/>
+    <rect x="830" y="130" width="690" height="720" rx="34" fill="url(#panel)" stroke="#334155" stroke-width="2"/>
   </g>
 
-  <text x="120" y="165" fill="#f8fafc" font-size="48" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Turn docsites into local AI-ready corpora</text>
-  <text x="120" y="215" fill="#cbd5e1" font-size="25" font-family="SF Pro Text, Inter, Arial, sans-serif">Scoped export, preserved paths, Markdown-first fetch, and audit artifacts in one CLI.</text>
+  <text x="120" y="158" fill="#f8fafc" font-size="44" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Turn docsites into local</text>
+  <text x="120" y="208" fill="#f8fafc" font-size="44" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">AI-ready corpora</text>
+  <text x="120" y="254" fill="#cbd5e1" font-size="24" font-family="SF Pro Text, Inter, Arial, sans-serif">Scoped export, preserved paths, Markdown-first fetch,</text>
+  <text x="120" y="286" fill="#cbd5e1" font-size="24" font-family="SF Pro Text, Inter, Arial, sans-serif">and audit artifacts in one CLI.</text>
 
-  <rect x="120" y="260" width="265" height="44" rx="22" fill="#0f172a" stroke="#155e75"/>
-  <text x="145" y="289" fill="#67e8f9" font-size="20" font-family="SF Mono, Menlo, monospace">LLM-ready Markdown corpus</text>
-  <rect x="400" y="260" width="190" height="44" rx="22" fill="#0f172a" stroke="#92400e"/>
-  <text x="425" y="289" fill="#fbbf24" font-size="20" font-family="SF Mono, Menlo, monospace">run_id 06f0f84e0332</text>
+  <rect x="120" y="324" width="336" height="42" rx="21" fill="#0f172a" stroke="#155e75"/>
+  <text x="145" y="351" fill="#67e8f9" font-size="18" font-family="SF Mono, Menlo, monospace">LLM-ready Markdown corpus</text>
+  <rect x="472" y="324" width="228" height="42" rx="21" fill="#0f172a" stroke="#92400e"/>
+  <text x="500" y="351" fill="#fbbf24" font-size="18" font-family="SF Mono, Menlo, monospace">6-page proof path</text>
 
-  <text x="120" y="350" fill="#94a3b8" font-size="19" font-family="SF Mono, Menlo, monospace">$ uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \</text>
-  <text x="120" y="380" fill="#e2e8f0" font-size="24" font-family="SF Mono, Menlo, monospace">  docsiphon "https://developerdocs.instructure.com/services/canvas" \</text>
-  <text x="120" y="410" fill="#e2e8f0" font-size="24" font-family="SF Mono, Menlo, monospace">  --scope-prefix /services/canvas --max-pages 6 --out ./_outputs</text>
+  <text x="120" y="418" fill="#94a3b8" font-size="17" font-family="SF Mono, Menlo, monospace">$ uvx --from git+https://github.com/</text>
+  <text x="120" y="446" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">  xiaojiou176-open/docsiphon.git \</text>
+  <text x="120" y="474" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">  docsiphon "https://developerdocs.instructure.com/services/canvas" \</text>
+  <text x="120" y="502" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">  --scope-prefix /services/canvas --max-pages 6 \</text>
+  <text x="120" y="530" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">  --out ./_outputs --site-root auto</text>
 
-  <rect x="120" y="460" width="590" height="360" rx="26" fill="#020617" stroke="#1e293b"/>
-  <rect x="120" y="460" width="590" height="12" rx="6" fill="url(#accent)"/>
-  <text x="150" y="515" fill="#f8fafc" font-size="30" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Resulting tree</text>
-  <text x="150" y="560" fill="#38bdf8" font-size="22" font-family="SF Mono, Menlo, monospace">_outputs/</text>
-  <text x="175" y="594" fill="#e2e8f0" font-size="22" font-family="SF Mono, Menlo, monospace">└── canvas/</text>
-  <text x="210" y="628" fill="#e2e8f0" font-size="22" font-family="SF Mono, Menlo, monospace">├── basics.md</text>
-  <text x="210" y="662" fill="#e2e8f0" font-size="22" font-family="SF Mono, Menlo, monospace">├── basics/</text>
-  <text x="245" y="696" fill="#e2e8f0" font-size="22" font-family="SF Mono, Menlo, monospace">├── file.changelog.md</text>
-  <text x="245" y="730" fill="#e2e8f0" font-size="22" font-family="SF Mono, Menlo, monospace">├── file.compound_documents.md</text>
-  <text x="245" y="764" fill="#e2e8f0" font-size="22" font-family="SF Mono, Menlo, monospace">└── file.endpoint_attributes.md</text>
-  <text x="210" y="798" fill="#e2e8f0" font-size="22" font-family="SF Mono, Menlo, monospace">├── manifest.jsonl</text>
-  <text x="210" y="832" fill="#e2e8f0" font-size="22" font-family="SF Mono, Menlo, monospace">├── report.json / report.html / toc.md</text>
+  <rect x="120" y="560" width="610" height="318" rx="26" fill="#020617" stroke="#1e293b"/>
+  <rect x="120" y="560" width="610" height="12" rx="6" fill="url(#accent)"/>
+  <text x="152" y="612" fill="#f8fafc" font-size="30" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Resulting tree</text>
+  <text x="152" y="648" fill="#38bdf8" font-size="21" font-family="SF Mono, Menlo, monospace">_outputs/</text>
+  <text x="184" y="678" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">└── canvas/</text>
+  <text x="216" y="708" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">├── basics.md</text>
+  <text x="216" y="738" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">├── basics/</text>
+  <text x="248" y="768" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">├── file.changelog.md</text>
+  <text x="248" y="798" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">├── file.compound_documents.md</text>
+  <text x="248" y="828" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">└── file.endpoint_attributes.md</text>
+  <text x="216" y="858" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">├── manifest.jsonl</text>
+  <text x="216" y="888" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">└── report.json / report.html / toc.md</text>
 
-  <text x="890" y="220" fill="#f8fafc" font-size="36" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Audit artifacts that explain the run</text>
-  <text x="890" y="260" fill="#cbd5e1" font-size="22" font-family="SF Pro Text, Inter, Arial, sans-serif">Real sample export against the Canvas developer docs, scoped to 6 pages.</text>
-
-  <g>
-    <rect x="890" y="320" width="290" height="136" rx="24" fill="#020617" stroke="#155e75"/>
-    <text x="920" y="367" fill="#67e8f9" font-size="23" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">report.json</text>
-    <text x="920" y="407" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">total: 334</text>
-    <text x="920" y="436" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">scheduled: 6</text>
-    <text x="920" y="465" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">failed: 0</text>
-  </g>
+  <text x="878" y="212" fill="#f8fafc" font-size="32" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Audit artifacts that explain</text>
+  <text x="878" y="250" fill="#f8fafc" font-size="32" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">the run</text>
+  <text x="878" y="294" fill="#cbd5e1" font-size="20" font-family="SF Pro Text, Inter, Arial, sans-serif">Real sample export against the Canvas developer docs,</text>
+  <text x="878" y="322" fill="#cbd5e1" font-size="20" font-family="SF Pro Text, Inter, Arial, sans-serif">scoped to 6 pages and arranged for review.</text>
 
   <g>
-    <rect x="1200" y="320" width="290" height="136" rx="24" fill="#020617" stroke="#166534"/>
-    <text x="1230" y="367" fill="#86efac" font-size="23" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">manifest.jsonl</text>
-    <text x="1230" y="407" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">page-level ledger</text>
-    <text x="1230" y="436" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">source, status, hash</text>
-    <text x="1230" y="465" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">run_id, extractor</text>
-  </g>
-
-  <g>
-    <rect x="890" y="492" width="290" height="136" rx="24" fill="#020617" stroke="#92400e"/>
-    <text x="920" y="539" fill="#fbbf24" font-size="23" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">toc.md</text>
-    <text x="920" y="579" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">human-readable tree</text>
-    <text x="920" y="608" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">mirrors path structure</text>
+    <rect x="878" y="364" width="282" height="138" rx="24" fill="#020617" stroke="#155e75"/>
+    <text x="908" y="408" fill="#67e8f9" font-size="22" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">report.json</text>
+    <text x="908" y="444" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">total: 336</text>
+    <text x="908" y="472" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">scheduled: 6</text>
+    <text x="908" y="500" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">failed: 0</text>
   </g>
 
   <g>
-    <rect x="1200" y="492" width="290" height="136" rx="24" fill="#020617" stroke="#7c3aed"/>
-    <text x="1230" y="539" fill="#c4b5fd" font-size="23" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">report.html</text>
-    <text x="1230" y="579" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">review summary</text>
-    <text x="1230" y="608" fill="#e2e8f0" font-size="20" font-family="SF Mono, Menlo, monospace">good for handoff</text>
+    <rect x="1190" y="364" width="282" height="138" rx="24" fill="#020617" stroke="#166534"/>
+    <text x="1220" y="408" fill="#86efac" font-size="22" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">manifest.jsonl</text>
+    <text x="1220" y="444" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">page-level ledger</text>
+    <text x="1220" y="472" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">source, status, hash</text>
+    <text x="1220" y="500" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">reviewable run evidence</text>
   </g>
 
   <g>
-    <rect x="890" y="678" width="600" height="96" rx="28" fill="#0b1220" stroke="#334155"/>
-    <text x="930" y="735" fill="#f8fafc" font-size="26" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Designed for AI ingestion, review, and repeatable exports</text>
+    <rect x="878" y="536" width="282" height="138" rx="24" fill="#020617" stroke="#92400e"/>
+    <text x="908" y="580" fill="#fbbf24" font-size="22" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">toc.md</text>
+    <text x="908" y="616" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">human-readable tree</text>
+    <text x="908" y="644" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">mirrors path structure</text>
+  </g>
+
+  <g>
+    <rect x="1190" y="536" width="282" height="138" rx="24" fill="#020617" stroke="#7c3aed"/>
+    <text x="1220" y="580" fill="#c4b5fd" font-size="22" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">report.html</text>
+    <text x="1220" y="616" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">review summary</text>
+    <text x="1220" y="644" fill="#e2e8f0" font-size="19" font-family="SF Mono, Menlo, monospace">good for handoff</text>
+  </g>
+
+  <g>
+    <rect x="878" y="716" width="594" height="102" rx="28" fill="#0b1220" stroke="#334155"/>
+    <text x="912" y="754" fill="#67e8f9" font-size="16" font-family="SF Mono, Menlo, monospace">CLI -> tree -> report -> repeatable evidence</text>
+    <text x="912" y="792" fill="#f8fafc" font-size="25" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">Designed for AI ingestion, review,</text>
+    <text x="912" y="824" fill="#f8fafc" font-size="25" font-family="SF Pro Display, Inter, Arial, sans-serif" font-weight="700">and repeatable exports</text>
   </g>
 </svg>

@@ -1,11 +1,5 @@
 # Docsiphon
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-0f172a?logo=python&logoColor=ffd43b&labelColor=111827&color=2dd4bf)](./pyproject.toml)
-[![CI](https://img.shields.io/github/actions/workflow/status/xiaojiou176-open/docsiphon/ci.yml?branch=main&label=ci)](https://github.com/xiaojiou176-open/docsiphon/actions/workflows/ci.yml)
-[![CodeQL](https://img.shields.io/github/actions/workflow/status/xiaojiou176-open/docsiphon/codeql.yml?branch=main&label=codeql)](https://github.com/xiaojiou176-open/docsiphon/actions/workflows/codeql.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-0f172a?labelColor=111827&color=f59e0b)](./LICENSE)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-0f172a?labelColor=111827&color=38bdf8)](./.pre-commit-config.yaml)
-
 **Turn documentation sites into AI-ready local Markdown corpora with preserved
 paths, reproducible exports, and audit artifacts.**
 
@@ -15,9 +9,21 @@ prefers Markdown when the docsite exposes it, falls back to HTML extraction
 when it does not, and writes a run ledger you can review, resume, or hand to
 another operator.
 
-[Quickstart](#quickstart) · [Example Output](#real-example-output) · [Release Draft](./.github/release-body-v0.1.1.md) · [Why Docsiphon](#why-docsiphon)
+**Best fit:** teams turning vendor docs into reviewable local Markdown corpora
+for retrieval, eval, and offline documentation work.
+**Not for:** fully generic website mirroring, JS-heavy browser automation, or
+pixel-perfect site archiving.
+
+[Try It In 30 Seconds](#quickstart) · [Why Docsiphon](#why-docsiphon) · [Repo Map](./docs/README.md) · [Examples](./examples/README.md) · [Latest Release](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
 
 ![Docsiphon hero showing scoped documentation export, preserved Markdown tree, and audit artifacts](./assets/docsiphon-hero.svg)
+
+_What a first success looks like: a scoped export, a preserved file tree, and
+audit artifacts you can hand to another operator._
+
+[![Release](https://img.shields.io/github/v/release/xiaojiou176-open/docsiphon?label=release)](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
+[![CI](https://img.shields.io/github/actions/workflow/status/xiaojiou176-open/docsiphon/ci.yml?branch=main&label=ci)](https://github.com/xiaojiou176-open/docsiphon/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-0f172a?labelColor=111827&color=f59e0b)](./LICENSE)
 
 > If you build retrieval, eval, or offline doc pipelines, star this repo now.
 > It is the kind of tool you do not need every day, but you will want to find
@@ -41,9 +47,51 @@ another operator.
 - Operators who need reproducible doc exports with a ledger, not one-off copy
   and paste sessions
 
+## Trade-offs / Not For
+
+Docsiphon is a strong fit when the source is a documentation site and the goal
+is to produce a clean local corpus.
+
+It is **not** the right tool when:
+
+- you need a universal website mirroring solution
+- the site depends on heavy browser-side rendering or authenticated product UX
+- you need to preserve every visual detail of a live site rather than extract
+  structured, text-first content
+
+## Quickstart
+
+### Fastest Way To Try It
+
+You only need two things for the default first run:
+
+1. install [`uv`](https://docs.astral.sh/uv/getting-started/installation/)
+2. copy the command below and let Docsiphon export a small, scoped sample
+
+```bash
+uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
+  docsiphon "https://developerdocs.instructure.com/services/canvas" \
+  --scope-prefix /services/canvas \
+  --max-pages 6 \
+  --out ./_outputs \
+  --site-root auto
+```
+
+This first run is intentionally small. It proves the path-preserving export,
+the report artifacts, and the Markdown-first fetch path without asking you to
+mirror an entire vendor docsite.
+
+If `uv` is not installed yet, start here:
+[Installing uv](https://docs.astral.sh/uv/getting-started/installation/).
+If you want a prefilled profile instead of flags, use the release assets under
+[`examples/README.md`](./examples/README.md).
+
 ## Why It Beats Naive Crawling
 
 ![Docsiphon before/after comparison between manual copying, generic mirrors, and an audit-friendly Markdown export](./assets/docsiphon-before-after.svg)
+
+_The point of this comparison is simple: Docsiphon is trying to give you a
+local corpus you can trust later, not just a pile of fetched bytes._
 
 | Approach | Preserves path hierarchy | Prefers Markdown | Emits audit artifacts | Resume support | Filtering and scope controls | LLM ingestion friendliness |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -56,26 +104,30 @@ Docsiphon is not trying to be a universal web archiver. It is opinionated about
 one job: turning documentation sites into clean local assets that are easier for
 AI systems and humans to inspect.
 
-## Quickstart
+### Copyable Profiles Without a Checkout
 
-### 30-Second Quickstart
+If you want a first run with less flag typing after the default path works,
+download one of the current `v0.1.1` release assets first:
 
-Run Docsiphon directly from GitHub with `uvx`:
+- [canvas-quickstart.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.1/canvas-quickstart.toml)
+- [rag-corpus.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.1/rag-corpus.toml)
+- [strict-audit.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.1/strict-audit.toml)
+
+Then run Docsiphon with the profile you downloaded:
 
 ```bash
 uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
   docsiphon "https://developerdocs.instructure.com/services/canvas" \
-  --scope-prefix /services/canvas \
-  --max-pages 6 \
-  --out ./_outputs \
-  --site-root auto
+  --profile ./canvas-quickstart.toml
 ```
 
-This scoped sample export is intentionally small and fast. It is enough to show
-the output tree, report artifacts, and path-preserving mapping without asking
-you to mirror an entire vendor docsite on your first run.
+### If The First Run Does Not Work
 
-Default output root: `./_outputs`
+- Need the full repository map and support boundary? Start with
+  [`docs/README.md`](./docs/README.md)
+- Want copyable profile examples? Jump to [`examples/README.md`](./examples/README.md)
+- Need the contributor workflow instead of the end-user path? Use
+  [`CONTRIBUTING.md`](./CONTRIBUTING.md)
 
 ## Common Commands
 
@@ -111,11 +163,8 @@ Use a profile file:
 ```bash
 uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
   docsiphon "https://example.com/docs/start" \
-  --profile ./config.toml
+  --profile ./examples/rag-corpus.toml
 ```
-
-If you want the contributor workflow instead of the end-user path, jump to
-[`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
 ## What You Get
 
@@ -130,6 +179,9 @@ Each non-dry run writes:
 ## Real Example Output
 
 ![Docsiphon demo showing a scoped export command, report summary, and generated file tree](./assets/docsiphon-demo.gif)
+
+_The demo below is not a generic animation. It is showing the exact kind of
+small first success the README is asking you to reproduce._
 
 The snapshot below comes from a real sample run against the Canvas developer
 docs with `--scope-prefix /services/canvas --max-pages 6`.
@@ -154,9 +206,9 @@ _outputs/
 
 ```json
 {
-  "run_id": "06f0f84e0332",
+  "run_id": "7477bdf950af",
   "discovery_source": "sitemap",
-  "total": 334,
+  "total": 336,
   "scheduled_urls": 6,
   "ok": 6,
   "failed": 0,
@@ -185,17 +237,62 @@ fetched_url: https://developerdocs.instructure.com/services/canvas/basics.md
 - Snapshot third-party documentation into a reviewable tree for eval or audit
 - Keep an offline Markdown mirror with a ledger you can diff, resume, and rerun
 
-## Trade-offs / Not For
+## Evidence Snapshot
 
-Docsiphon is a strong fit when the source is a documentation site and the goal
-is to produce a clean local corpus.
+This is the section for people evaluating whether Docsiphon is merely
+well-written or actually grounded in runnable evidence.
 
-It is **not** the right tool when:
+| Surface | Current public evidence | How to reproduce it | Why it matters |
+| --- | --- | --- | --- |
+| Markdown twin docsites | `scripts/verify_instructure.sh` currently confirms `200 text/markdown` responses for both the Canvas root page and a nested subpage | `bash scripts/verify_instructure.sh` | Proves the Markdown-first path is real on a public vendor docsite |
+| Sitemap-scoped export | A fresh sample run discovered `336` URLs through sitemap, scheduled `6`, wrote `6`, and failed `0` under `--scope-prefix /services/canvas --max-pages 6` | `uv run docsiphon "https://developerdocs.instructure.com/services/canvas" --scope-prefix /services/canvas --max-pages 6 --out /tmp/docsiphon-sample --site-root auto` | Shows the "small first success" story is not hypothetical |
+| Discovery coverage | The current engine covers `llms.txt`, sitemap, search index, and BFS fallback in code and automated tests | `uv run pytest tests/test_discovery.py tests/test_discovery_more.py` | Explains why Docsiphon is more than a single-site probe |
+| Audit artifacts | `manifest.jsonl`, `report.json`, `index.json`, `toc.md`, `report.html`, and sampled `_errors/` snapshots all have dedicated test coverage | `uv run pytest tests/test_report.py tests/test_storage.py tests/test_cli_run.py` | This is the part generic mirrors usually do not give you |
+| Release assets and copyable profiles | The latest public release ships hero/demo/social-preview assets plus downloadable starter profiles | [Release v0.1.1](https://github.com/xiaojiou176-open/docsiphon/releases/tag/v0.1.1) | Lets evaluators try the repo without reverse-engineering local setup |
 
-- you need a universal website mirroring solution
-- the site depends on heavy browser-side rendering or authenticated product UX
-- you need to preserve every visual detail of a live site rather than extract
-  structured, text-first content
+Evidence refreshed from a local verification run on `2026-03-26`.
+
+## What's Next
+
+Docsiphon already covers the core export loop, but the near-term public focus is
+clear:
+
+- expand compatibility with more real-world documentation site shapes through
+  the docs-site compatibility intake path
+- keep tightening the public example profiles so first-time users can move from
+  README to a successful export faster
+- keep improving the review and artifact story around `manifest.jsonl`,
+  `report.json`, `report.html`, and `toc.md`
+
+If you want a vote in what gets optimized next, the most useful entrypoint is
+the repo-local roadmap and the live GitHub issues / discussions indexes:
+
+- Repo roadmap: `docs/roadmap.md`
+- Roadmap issue queue:
+  `https://github.com/xiaojiou176-open/docsiphon/issues?q=is%3Aissue+is%3Aopen+label%3Aroadmap`
+- Discussions index:
+  `https://github.com/xiaojiou176-open/docsiphon/discussions`
+- Current roadmap themes:
+  - expand docs-site compatibility coverage
+  - strengthen public example profiles
+  - improve audit artifact review surfaces
+
+## Community Pulse
+
+Docsiphon keeps a few public threads active so the repository does not feel
+like a one-shot dump:
+
+- Discussions home:
+  `https://github.com/xiaojiou176-open/docsiphon/discussions`
+- Categories to look for there:
+  - Announcements for release highlights
+  - Q&A for first-run blockers
+  - Ideas for docsite requests and workflow proposals
+  - Show and Tell for real exported corpora
+
+If you use Docsiphon on a real documentation stack, the most useful thing you
+can share is the command you ran, the target docs surface, and a short
+`report.json` excerpt.
 
 ## Why Not Just `wget` or a Generic Crawler?
 
@@ -232,21 +329,23 @@ real:
 
 Current verification entrypoints:
 
-```bash
-uv run python scripts/check_contracts.py
-uv run python scripts/check_repo_hygiene.py
-uv run pre-commit run --all-files
-uv run pytest tests
-uv run docsiphon --help
-```
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the full contributor verification
+commands and the canonical local cleanup path.
 
 ## Documentation
 
 The public docs surface stays intentionally thin and high-signal.
 
 - Repository map, execution model, and support boundary: `docs/README.md`
-- Release draft for the next public polish pass: `.github/release-body-v0.1.1.md`
-- GitHub social preview upload source: `assets/docsiphon-social-preview.png`
+- GitHub Pages landing page: `docs/index.md`
+- GitHub Pages repo map: `docs/repo-map.md`
+- Latest public release: `https://github.com/xiaojiou176-open/docsiphon/releases/latest`
+- Release body source for `v0.1.1`: `.github/release-body-v0.1.1.md`
+- GitHub social preview source file for repository settings:
+  `assets/docsiphon-social-preview.png`
+- Citation metadata: `CITATION.cff`
+- Copyable profile examples: `examples/README.md`
+- Downloadable example profile assets also ship on the latest release page
 - Contribution workflow: `CONTRIBUTING.md`
 - Security reporting: `SECURITY.md`
 - Support policy: `SUPPORT.md`
@@ -255,6 +354,9 @@ The public docs surface stays intentionally thin and high-signal.
 
 - `CODEOWNERS` defines the review routing baseline
 - PR and Issue templates are part of the live repository contract
+- Current roadmap themes live in `docs/roadmap.md`
+- GitHub Discussions remains the community front door:
+  `https://github.com/xiaojiou176-open/docsiphon/discussions`
 - Generated outputs, caches, runtime state, and local editor files stay out of Git
 
 ## Development Environment

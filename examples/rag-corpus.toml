@@ -1,0 +1,12 @@
+[profile]
+output_dir = "./_outputs"
+site_root = "auto"
+frontmatter = true
+frontmatter_timestamp = false
+manifest_sorted = true
+save_html = false
+save_error_html = true
+content_extractor = "auto"
+ignore_query_prefixes = ["utm_"]
+error_snapshot_max_files = 10
+error_snapshot_max_total_bytes = 400000

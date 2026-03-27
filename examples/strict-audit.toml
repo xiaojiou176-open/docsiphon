@@ -1,0 +1,14 @@
+[profile]
+output_dir = "./_outputs"
+site_root = "auto"
+frontmatter = true
+manifest_sorted = true
+save_html = true
+save_error_html = true
+error_snapshot_max_files = 20
+error_snapshot_max_total_bytes = 800000
+error_snapshot_max_bytes = 120000
+retry_total = 5
+retry_http_429 = 4
+retry_http_5xx = 3
+request_timeout = 30
