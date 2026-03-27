@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If Docsiphon helps your AI or documentation workflow, please cite the project using the metadata below."
+title: "Docsiphon"
+version: "0.1.1"
+type: software
+license: MIT
+authors:
+  - family-names: "Yuyi"
+    given-names: "Terry"
+repository-code: "https://github.com/xiaojiou176-open/docsiphon"
+url: "https://github.com/xiaojiou176-open/docsiphon/releases/latest"
+abstract: "Docsiphon is a Python CLI that turns documentation sites into AI-ready local Markdown corpora with preserved paths and audit artifacts."
+keywords:
+  - ai
+  - rag
+  - markdown
+  - documentation
+  - crawler
+  - llms-txt
+  - knowledge-base

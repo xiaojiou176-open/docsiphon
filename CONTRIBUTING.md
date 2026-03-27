@@ -33,6 +33,9 @@ pre-commit install
 
 ## Running Checks
 
+This section is the **canonical** source of truth for contributor verification
+commands. Other repo docs should link here instead of copying the full block.
+
 The current repository truth is:
 
 - the governance contracts should pass:
@@ -68,6 +71,20 @@ uv run pytest tests
 If you add or change behavior, run the narrowest relevant verification and then
 run the full repository test suite above before handing work off.
 
+## Clean Local State
+
+Use the cleanup script when you want to remove rebuildable local noise without
+touching operator data such as `_outputs/`.
+
+```bash
+uv run python scripts/clean_local_state.py --apply
+```
+
+This command is intended to clean local-only directories such as `build/`,
+`*.egg-info/`, `__pycache__/`, `.pytest_cache/`, `.runtime-cache/temp/`, and
+`htmlcov/`. It is **not** the right command for deleting `_outputs/`, because
+that directory still belongs to operator data rather than disposable noise.
+
 ## Code and Documentation Expectations
 
 - Match the repository's existing style and naming patterns.
@@ -79,6 +96,8 @@ run the full repository test suite above before handing work off.
   up.
 - Keep generated outputs out of Git.
 - Prefer clear failure reporting over silent fallback behavior.
+- Treat `.github/public-surface-ledger.yml` as the repository's current source
+  of truth for GitHub-side metadata and manual-required settings.
 
 ## Pull Request Expectations
 
@@ -97,6 +116,10 @@ Please include:
 
 - Open work through the issue templates under `.github/ISSUE_TEMPLATE/` so the
   maintainer gets reproducible context instead of free-form guesses.
+- Prefer the GitHub Discussions index for questions, ideas, and show-and-tell
+  before opening a new issue:
+  - Discussions home: `https://github.com/xiaojiou176-open/docsiphon/discussions`
+  - Current roadmap themes: `docs/roadmap.md`
 - Use pull requests for changes targeting `main`. The repository's collaboration
   baseline assumes branch protection and CI checks will be the merge gate.
 - Treat `CODEOWNERS` review routing as the source of truth for who should be

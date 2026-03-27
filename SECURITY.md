@@ -15,9 +15,11 @@ Do **not** post vulnerability details in a public issue or PR.
 
 Use one of these private paths:
 
-1. GitHub private vulnerability reporting, if the repository UI offers it.
+1. GitHub private vulnerability reporting when it is available in the UI for
+   this repository. The current platform-state verification is tracked in
+   `.github/public-surface-ledger.yml`.
 2. The repository owner profile contact path, if private reporting is not
-   available in the UI.
+   available in the UI for some reason.
 
 Include:
 

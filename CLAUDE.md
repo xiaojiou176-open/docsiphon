@@ -20,10 +20,5 @@ entrypoints.
 
 ## Verification
 
-```bash
-uv run python scripts/check_contracts.py
-uv run python scripts/check_repo_hygiene.py
-uv run pre-commit run --all-files
-uv run pytest tests
-uv run docsiphon --help
-```
+Use [`CONTRIBUTING.md`](./CONTRIBUTING.md) as the canonical source for full
+verification commands and local cleanup guidance.

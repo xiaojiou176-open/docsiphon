@@ -4,15 +4,44 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this file tracks repository-level changes. It does not, by itself, imply
-that a hosted release pipeline, signed artifacts, or release provenance are
-already in place.
+that a hosted release pipeline or public release trust chain exists unless the
+repository workflow surface and release evidence say so. The current release
+evidence entrypoint is the manual `.github/workflows/release-evidence.yml`
+workflow.
 
 ## [Unreleased]
 
 ### Added
+- manual `release-evidence.yml` workflow for generating pinned release
+  artifacts, checksums, SBOM, and provenance outside the PR required chain
+- README evidence snapshot covering public probe, scoped export evidence,
+  discovery coverage, and audit-artifact proof paths
+- release-facing profile download links and stronger first-run routing for
+  no-checkout evaluators
+- a GitHub Pages-facing docs landing formalization plan covering `_config.yml`,
+  `repo-map.md`, `robots.txt`, and `sitemap.xml`
+
+### Changed
+- pinned GitHub Actions workflows to full commit SHAs for supply-chain trust
+- rewired the README first screen around a single canonical quickstart path,
+  earlier fit boundaries, and fresher public proof numbers
+- aligned `examples/canvas-quickstart.toml` with the six-page first-run story
+- refreshed the public release body toward the current six-page sample proof
+- sharpened docs routing so `docs/README.md` can act as the GitHub-facing docs
+  entrypoint
+- refreshed release body source toward clearer evidence, docs, and support
+  entrypoints
+- synced `uv.lock` with the public `chardet<8` dependency constraint
+- raised the `requests` floor to `>=2.33.0` to close Dependabot alert
+  `GHSA-gc5v-m9x4-r6x2` / `CVE-2026-25645`
+
+## [0.1.1]
+
+### Added
 - Productized public-facing README with AI / RAG positioning, real-output
   examples, and visual assets under `assets/`
-- Public release draft source at `.github/release-body-v0.1.1.md`
+- Public release body source at `.github/release-body-v0.1.1.md`
+- First public GitHub release announcement discussion
 - Collaboration guardrails:
   - `.github/CODEOWNERS`
   - PR template

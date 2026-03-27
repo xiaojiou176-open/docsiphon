@@ -27,8 +27,18 @@ Please gather:
 ## Canonical Entry Points
 
 - project overview and commands: `README.md`
-- repository map and execution model: `docs/README.md`
+- GitHub Pages landing page: `docs/index.md`
+- repository map and support boundary: `docs/repo-map.md`
+- repo-side docs companion: `docs/README.md`
+- current roadmap themes: `docs/roadmap.md`
+- copyable profile examples: `examples/README.md`
 - contribution workflow: `CONTRIBUTING.md`
+- current GitHub-side public metadata and manual-required settings:
+  `.github/public-surface-ledger.yml`
+- GitHub Discussions home for Q&A, ideas, and show-and-tell:
+  `https://github.com/xiaojiou176-open/docsiphon/discussions`
+- Docs-site compatibility issue template for hard docsite shapes:
+  `.github/ISSUE_TEMPLATE/docs_site_compat.yml`
 
 ## Response Expectations
 
