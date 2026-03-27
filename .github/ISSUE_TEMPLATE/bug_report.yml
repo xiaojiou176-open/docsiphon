@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a reproducible problem in Docsiphon.
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please include enough detail for the maintainer to reproduce it locally.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the actual behavior and why it is a problem.
+      placeholder: The exporter skipped pages after sitemap discovery...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      description: Provide exact commands, URLs, or sanitized inputs.
+      placeholder: |
+        1. Run `uv run docsiphon "..."`
+        2. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      placeholder: I expected ...
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: What verification did you already run?
+      description: Include `pytest`, `pre-commit`, or other checks you ran.
+      placeholder: |
+        - `uv run pytest tests`
+        - `uv run docsiphon --help`
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, Python version, and any relevant runtime details.
+      placeholder: macOS 15, Python 3.11, uv 0.x ...
+    validations:
+      required: true

@@ -1,0 +1,39 @@
+name: Feature request
+description: Propose a scoped improvement for Docsiphon.
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the user need first. The most useful feature requests explain the problem before proposing an implementation.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      placeholder: I need to export authenticated docs where ...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What change do you want?
+      placeholder: Add a flag / change behavior / expose a report field ...
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What alternatives did you consider?
+      placeholder: Current workaround, competing tools, or why the current behavior is insufficient.
+    validations:
+      required: false
+  - type: textarea
+    id: verification
+    attributes:
+      label: How would we know this is done?
+      description: Describe expected CLI behavior, docs changes, or tests.
+      placeholder: A passing test or command output would show ...
+    validations:
+      required: true

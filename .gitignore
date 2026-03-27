@@ -1,0 +1,48 @@
+# Baseline ignore rules
+
+.DS_Store
+.agents/
+.agent/
+.codex/
+.claude/
+node_modules/
+dist/
+build/
+out/
+.next/
+.turbo/
+.cache/
+coverage/
+*.log
+data/
+tmp/
+artifacts/
+logs/
+cache/
+*.pyc
+.coverage
+
+# Local environment and credential files
+.env
+.env.*
+!.env.example
+.npmrc
+.pypirc
+credentials*.json
+secrets.yml
+secrets.yaml
+
+.pytest_cache/
+.venv/
+.vscode/
+__pycache__/
+.runtime-cache/
+*.egg-info/
+_outputs/
+htmlcov/
+venv/
+
+# Legacy output roots kept temporarily while historical repository residue is
+# being cleaned. New code, docs, or scripts must not write to these paths.
+exported_docs/
+导出文档(exported_docs)/

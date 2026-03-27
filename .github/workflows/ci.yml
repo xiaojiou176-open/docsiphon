@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Check governance contracts
+        run: python scripts/check_contracts.py
+
+      - name: Check repository hygiene
+        run: python scripts/check_repo_hygiene.py
+
+      - name: Sync environment
+        run: uv sync --frozen
+
+      - name: Run pre-commit policy
+        run: uv run pre-commit run --all-files
+
+      - name: Run tests
+        run: uv run pytest tests
+
+      - name: Verify CLI entrypoint
+        run: uv run docsiphon --help

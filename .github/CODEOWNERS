@@ -1,0 +1,9 @@
+* @xiaojiou176-open
+
+# Core runtime and repository policy files route to the repository owner.
+/src/ @xiaojiou176-open
+/scripts/ @xiaojiou176-open
+/tests/ @xiaojiou176-open
+/docs/ @xiaojiou176-open
+/.github/ @xiaojiou176-open
+/*.md @xiaojiou176-open
