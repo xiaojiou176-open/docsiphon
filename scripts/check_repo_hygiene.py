@@ -25,6 +25,7 @@ TEXT_SCAN_ROOTS = (
     "CONTRIBUTING.md",
     "SECURITY.md",
     "assets",
+    "examples",
     "scripts",
     "src",
     "tests",
@@ -62,9 +63,11 @@ ROOT_ALLOWLIST = {
     "assets",
     "CHANGELOG.md",
     "CLAUDE.md",
+    "CITATION.cff",
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "docs",
+    "examples",
     "LICENSE",
     "pyproject.toml",
     "README.md",
@@ -87,6 +90,7 @@ LOCAL_ONLY_ROOT_ITEMS = {
 ALLOWED_WORKFLOWS = {
     "ci.yml",
     "codeql.yml",
+    "release-evidence.yml",
 }
 
 
@@ -265,7 +269,15 @@ def collect_workflow_allowlist_errors(repo_root: Path) -> list[str]:
 def collect_docs_surface_errors(repo_root: Path) -> list[str]:
     errors: list[str] = []
     docs_root = repo_root / "docs"
-    allowed_docs_files = {"README.md"}
+    allowed_docs_files = {
+        "README.md",
+        "index.md",
+        "roadmap.md",
+        "_config.yml",
+        "repo-map.md",
+        "robots.txt",
+        "sitemap.xml",
+    }
 
     if not docs_root.is_dir():
         errors.append("docs directory missing")

@@ -1,0 +1,103 @@
+name: Release Evidence
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Optional existing Git tag/release that should receive refreshed evidence assets. Leave blank to keep evidence on the workflow run only."
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+
+jobs:
+  release-evidence:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.11"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+
+      - name: Confirm target release exists
+        if: inputs.release_tag != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.release_tag }}
+        run: gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null
+
+      - name: Sync environment
+        run: uv sync --frozen --group dev
+
+      - name: Check governance contracts
+        run: python scripts/check_contracts.py
+
+      - name: Check repository hygiene
+        run: python scripts/check_repo_hygiene.py
+
+      - name: Run pre-commit policy
+        run: uv run pre-commit run --all-files
+
+      - name: Run tests
+        run: uv run pytest tests
+
+      - name: Verify CLI entrypoint
+        run: uv run docsiphon --help
+
+      - name: Build release artifacts
+        run: uv build
+
+      - name: Generate checksums
+        run: sha256sum dist/* > dist/SHA256SUMS
+
+      - name: Install Syft
+        env:
+          RUNNER_BIN: ${{ runner.temp }}/bin
+        run: |
+          mkdir -p "$RUNNER_BIN"
+          curl -sSfL https://get.anchore.io/syft | sh -s -- -b "$RUNNER_BIN"
+          echo "$RUNNER_BIN" >> "$GITHUB_PATH"
+
+      - name: Generate SPDX JSON SBOM
+        run: |
+          syft . -o spdx-json=dist/docsiphon-sbom.spdx.json
+
+      - name: Attest release artifacts provenance
+        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4
+        with:
+          subject-path: |
+            dist/*.tar.gz
+            dist/*.whl
+            dist/SHA256SUMS
+
+      - name: Attest release SBOM
+        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4
+        with:
+          subject-path: |
+            dist/*.tar.gz
+            dist/*.whl
+          sbom-path: dist/docsiphon-sbom.spdx.json
+
+      - name: Upload release evidence assets
+        if: inputs.release_tag != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.release_tag }}
+        run: |
+          gh release upload "$TAG" \
+            dist/*.tar.gz \
+            dist/*.whl \
+            dist/SHA256SUMS \
+            dist/docsiphon-sbom.spdx.json \
+            --clobber

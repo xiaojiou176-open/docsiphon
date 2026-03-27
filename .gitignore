@@ -41,8 +41,3 @@ __pycache__/
 _outputs/
 htmlcov/
 venv/
-
-# Legacy output roots kept temporarily while historical repository residue is
-# being cleaned. New code, docs, or scripts must not write to these paths.
-exported_docs/
-导出文档(exported_docs)/
