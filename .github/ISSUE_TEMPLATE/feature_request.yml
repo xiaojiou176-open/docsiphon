@@ -3,11 +3,12 @@ description: Propose a scoped improvement for Docsiphon.
 title: "[Feature] "
 labels:
   - enhancement
+  - ai-rag
 body:
   - type: markdown
     attributes:
       value: |
-        Please describe the user need first. The most useful feature requests explain the problem before proposing an implementation.
+        Please describe the user need first. The most useful feature requests explain the problem before proposing an implementation, especially if the request changes how Docsiphon helps an AI / RAG workflow.
   - type: textarea
     id: problem
     attributes:

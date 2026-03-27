@@ -1,0 +1,31 @@
+changelog:
+  exclude:
+    labels:
+      - duplicate
+      - invalid
+      - wontfix
+  categories:
+    - title: Public Surface
+      labels:
+        - public-surface
+        - documentation
+    - title: AI and RAG Workflow
+      labels:
+        - ai-rag
+    - title: Docs Site Compatibility
+      labels:
+        - docs-site-compat
+    - title: Output Artifacts
+      labels:
+        - output-artifacts
+    - title: Release and Packaging
+      labels:
+        - release
+        - dependencies
+    - title: Other Changes
+      labels:
+        - enhancement
+        - bug
+
+# Release notes grouping lives here. Release evidence generation is owned by
+# `.github/workflows/release-evidence.yml`.

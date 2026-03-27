@@ -3,11 +3,12 @@ description: Report a reproducible problem in Docsiphon.
 title: "[Bug] "
 labels:
   - bug
+  - output-artifacts
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting a bug. Please include enough detail for the maintainer to reproduce it locally.
+        Thanks for reporting a bug. Please include enough detail for the maintainer to reproduce it locally or through the public `uvx` entrypoint.
   - type: textarea
     id: summary
     attributes:
@@ -22,7 +23,7 @@ body:
       label: How can we reproduce it?
       description: Provide exact commands, URLs, or sanitized inputs.
       placeholder: |
-        1. Run `uv run docsiphon "..."`
+        1. Run `uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git docsiphon "..."`
         2. Observe ...
     validations:
       required: true
@@ -39,8 +40,8 @@ body:
       label: What verification did you already run?
       description: Include `pytest`, `pre-commit`, or other checks you ran.
       placeholder: |
-        - `uv run pytest tests`
-        - `uv run docsiphon --help`
+        - `uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git docsiphon --help`
+        - `uv run pytest tests` (if you worked from a local checkout)
     validations:
       required: true
   - type: textarea

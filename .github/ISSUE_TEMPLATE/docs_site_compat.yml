@@ -1,0 +1,68 @@
+name: Docs site compatibility
+description: Report a documentation site shape that Docsiphon should support better.
+title: "[Docs Site] "
+labels:
+  - enhancement
+  - docs-site-compat
+  - ai-rag
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template when a specific documentation site shape breaks your export workflow or needs first-class support.
+  - type: input
+    id: docs_url
+    attributes:
+      label: Documentation site URL
+      placeholder: https://example.com/docs/start
+    validations:
+      required: true
+  - type: dropdown
+    id: discovery_surface
+    attributes:
+      label: Which discovery surface exists today?
+      options:
+        - llms.txt
+        - sitemap
+        - search index
+        - HTML links only
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What breaks today?
+      placeholder: Docsiphon misses nested pages, path mapping is awkward, Markdown twins exist but are not discovered, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: desired
+    attributes:
+      label: What output would make this site usable?
+      placeholder: I want a preserved Markdown tree with ...
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: What evidence can you share?
+      description: Add example commands, headers, sitemap URLs, llms.txt locations, or sanitized report snippets.
+      placeholder: |
+        - `uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git ...`
+        - sitemap URL
+        - report.json excerpt
+    validations:
+      required: false
+  - type: dropdown
+    id: output_use
+    attributes:
+      label: What are you trying to use the export for?
+      options:
+        - RAG corpus preparation
+        - Offline review or mirror
+        - AI eval or benchmark setup
+        - General documentation archive
+        - Something else
+    validations:
+      required: false

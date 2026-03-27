@@ -1,5 +1,23 @@
 blank_issues_enabled: false
 contact_links:
+  - name: View roadmap
+    url: https://xiaojiou176-open.github.io/docsiphon/roadmap/
+    about: See the stable public roadmap summary without navigating raw repository markdown.
+  - name: Latest release
+    url: https://github.com/xiaojiou176-open/docsiphon/releases/latest
+    about: Start from the latest release if you want the current public snapshot and attached assets.
+  - name: Docs landing
+    url: https://xiaojiou176-open.github.io/docsiphon/
+    about: Start from the thin Pages landing page if you want the shortest public entrypoint.
+  - name: Ask a question
+    url: https://github.com/xiaojiou176-open/docsiphon/discussions
+    about: Use GitHub Discussions for setup questions, confusing output, or first-run help.
+  - name: Share an idea
+    url: https://github.com/xiaojiou176-open/docsiphon/discussions
+    about: Use GitHub Discussions to propose docsite targets, features, or AI / RAG workflow improvements.
+  - name: Show and tell
+    url: https://github.com/xiaojiou176-open/docsiphon/discussions
+    about: Share exported corpora, output trees, and how you used Docsiphon in practice via GitHub Discussions.
   - name: Security report
     url: https://github.com/xiaojiou176-open/docsiphon/blob/main/SECURITY.md
     about: Do not disclose vulnerability details in a public issue. Follow the security reporting guidance instead.
