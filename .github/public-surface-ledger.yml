@@ -3,35 +3,35 @@ items:
   - item: description
     status: verified
     source: gh_api_repo_metadata
-    last_verified_utc: "2026-03-27T04:15:28Z"
-    notes: "Matches the current public repository description."
+    last_verified_utc: "2026-04-09T18:34:25Z"
+    notes: "Fresh read-back after Wave 2 metadata closure: GitHub description now matches the current Markdown-first CLI product sentence."
   - item: homepage
     status: verified
     source: gh_api_repo_metadata
-    last_verified_utc: "2026-03-27T04:15:28Z"
-    notes: "Points to the live GitHub Pages landing page."
+    last_verified_utc: "2026-04-09T18:34:25Z"
+    notes: "Repo metadata still points to the live GitHub Pages landing page; homepage HTTP read-back returned 200 this wave."
   - item: topics
     status: verified
     source: gh_api_repo_metadata
-    last_verified_utc: "2026-03-27T04:15:28Z"
-    notes: "Current public topics are discoverable via GitHub metadata."
+    last_verified_utc: "2026-04-09T18:34:25Z"
+    notes: "Current public topics remain discoverable via GitHub metadata and stay aligned with the CLI-first documentation export story."
   - item: discussions
     status: verified
     source: gh_api_repo_metadata
-    last_verified_utc: "2026-03-27T04:15:28Z"
-    notes: "GitHub Discussions is enabled and publicly reachable."
+    last_verified_utc: "2026-04-09T18:34:25Z"
+    notes: "GitHub Discussions remains enabled; repo metadata says true and the public discussions page returned HTTP 200 this wave."
   - item: branch_protection_main
     status: verified
     source: gh_api_branch_protection
-    last_verified_utc: "2026-03-27T04:15:28Z"
-    notes: "Main requires status checks, linear history, and blocks force-push/delete."
+    last_verified_utc: "2026-04-09T18:34:25Z"
+    notes: "Fresh read-back after Wave 2 remote closure: main now requires strict checks, 1 approving review, required signatures, linear history, and blocks force-push/delete."
   - item: private_vulnerability_reporting
     status: verified
     source: gh_api_private_vulnerability_reporting
-    last_verified_utc: "2026-03-27T04:15:28Z"
-    notes: "GitHub private vulnerability reporting API currently returns enabled=true."
+    last_verified_utc: "2026-04-09T18:34:25Z"
+    notes: "GitHub private vulnerability reporting API returned enabled=true in this wave's fresh read-back."
   - item: custom_social_preview
     status: manual_required
     source: public_og_image_check
-    last_verified_utc: "2026-03-27T04:15:28Z"
-    notes: "Public og:image still resolves to the default GitHub Open Graph card; verify custom upload manually in repository settings."
+    last_verified_utc: "2026-04-09T18:34:25Z"
+    notes: "Release assets include docsiphon-social-preview.png, but this wave still has no auditable settings-level read-back proving GitHub custom social preview upload; keep as manual owner-only later."

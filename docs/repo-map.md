@@ -10,6 +10,10 @@ This page is the rendered HTML map for the Docsiphon `docs/` surface.
 Use it when you want the shortest answer to "what lives where?" without reading
 the full repository README first.
 
+The current product front door still stays in `README.md` + the `uvx`
+quickstart. This repo map is the Pages companion, not a second primary
+surface.
+
 ## Front Doors
 
 - Full README:
@@ -20,6 +24,11 @@ the full repository README first.
   [Roadmap](https://xiaojiou176-open.github.io/docsiphon/roadmap/)
 - Latest release:
   [Release entrypoint](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
+
+The rule behind this map is simple: current public onboarding still starts from
+the CLI-first README and `uvx` quickstart. Any future MCP-aware surface remains
+secondary until it has its own install contract, verification gate, public
+packet, and lane truth.
 
 ## Repository Layout
 
@@ -64,6 +73,8 @@ repository map and execution model.
 
 ## Support Boundary
 
+- Any future MCP-aware surface remains future secondary until it ships its own
+  install contract, verification gate, public packet, and lane truth
 - `scripts/verify_instructure.sh` is a public example probe, not a compatibility
   promise for every documentation vendor
 - Releases are published from the GitHub releases page, not from the Pages
