@@ -11,6 +11,11 @@ Export documentation sites into **AI-ready local Markdown corpora** with
 Docsiphon is for people who need something more trustworthy than
 "mirror the site and hope for the best."
 
+Current front-door rule: the public first-success path is still the `uvx`
+quickstart below. If Docsiphon grows an MCP-aware surface later, that path will
+remain a secondary surface until it ships its own install contract,
+verification gate, public packet, and lane truth.
+
 ## Fastest Path
 
 1. Install [`uv`](https://docs.astral.sh/uv/getting-started/installation/).

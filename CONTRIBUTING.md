@@ -76,7 +76,10 @@ run the full repository test suite above before handing work off.
 Use the cleanup script when you want to remove rebuildable local noise without
 touching operator data such as `_outputs/`.
 
+Treat the script below as the default repo-local cleanup lane.
+
 ```bash
+uv run python scripts/clean_local_state.py
 uv run python scripts/clean_local_state.py --apply
 ```
 
@@ -85,12 +88,26 @@ This command is intended to clean local-only directories such as `build/`,
 `htmlcov/`. It is **not** the right command for deleting `_outputs/`, because
 that directory still belongs to operator data rather than disposable noise.
 
+Additional contract notes:
+
+- `.venv/` is a rebuildable local environment, but it is intentionally outside
+  the default cleanup lane so contributors do not lose their Python toolchain
+  by accident
+- this repository has no repo-owned Docker cleanup lane at the moment
+- treat the cleanup lane above as repo-local only; it is not a workstation-wide
+  cleanup contract
+
 ## Code and Documentation Expectations
 
 - Match the repository's existing style and naming patterns.
 - Fix root causes, not just symptoms.
 - Update the thin public docs surface when user-visible behavior or setup
   expectations change.
+- Keep the current flagship public packet wording aligned with `README.md` and
+  `AGENTS.md`: GitHub repo front door + `uvx` quickstart + release assets /
+  example profiles.
+- Do not present any future MCP-aware secondary surface as a current primary
+  experience or current flagship packet.
 - Keep public-facing claims anchored in runnable commands, real output, or code
   paths. Do not add decorative marketing copy that the repository cannot back
   up.
