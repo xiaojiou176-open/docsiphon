@@ -30,6 +30,14 @@ uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
   --site-root auto
 ```
 
+## What You Get
+
+一次最小成功应该给你 3 类东西，而不是一堆没法复盘的抓取碎片：
+
+- preserved Markdown tree
+- run ledger artifacts: `manifest.jsonl`, `report.json`, `toc.md`, `report.html`
+- 一份可继续 diff、resume、handoff 的本地 docs corpus
+
 ## Why It Exists
 
 - Prefer Markdown twins when a docsite publishes them
@@ -41,6 +49,13 @@ uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
 - AI / RAG corpus preparation
 - offline documentation review
 - repeatable doc exports with audit-friendly run artifacts
+
+## Why Not Generic Crawlers
+
+因为真正麻烦的不是“抓到页面”，而是“以后还能看懂、还能对账、还能继续用”。
+
+> 通用 crawler 更像把文件柜整柜倒在地上。
+> Docsiphon 想做的是把文件按标签重新装回可用的文件夹。
 
 ## Start Here
 
