@@ -30,11 +30,21 @@ the CLI-first README and `uvx` quickstart. Any future MCP-aware surface remains
 secondary until it has its own install contract, verification gate, public
 packet, and lane truth.
 
+## At A Glance
+
+| Area | What lives here | Why it exists |
+| --- | --- | --- |
+| Front Door | README + `uvx` quickstart | 最快把人带到 first success |
+| Execution Model | CLI-driven export pipeline | 解释它怎么工作，而不是先讲平台梦 |
+| Output Artifacts | `manifest.jsonl`, `report.json`, `index.json`, `toc.md`, `report.html` | 证明它不是一次性抓取，而是可复盘工件 |
+| Support Boundary | `CLI-first`, no hosted API, future MCP stays secondary | 防止把“可能会做”误读成“今天已经在卖” |
+
 ## Repository Layout
 
 - `src/docsiphon/`: CLI package and export pipeline implementation
 - `scripts/`: contract checks, repository hygiene checks, and example probes
 - `tests/`: automated verification for the CLI and support code
+- `design-system/`: front-door hierarchy, proof ladder, and asset rules
 - `examples/`: copyable starter profiles and sample inputs
 - `docs/`: this thin public Pages surface
 

@@ -14,7 +14,7 @@ for retrieval, eval, and offline documentation work.
 **Not for:** fully generic website mirroring, JS-heavy browser automation, or
 pixel-perfect site archiving.
 
-[Try It In 30 Seconds](#quickstart) · [Why Docsiphon](#why-docsiphon) · [Repo Map](./docs/README.md) · [Examples](./examples/README.md) · [Latest Release](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
+[First Success](#first-success-in-one-command) · [Proof Ladder](#proof-ladder) · [Repo Map](./docs/README.md) · [Examples](./examples/README.md) · [Latest Release](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
 
 ![Docsiphon hero showing scoped documentation export, preserved Markdown tree, and audit artifacts](./assets/docsiphon-hero.svg)
 
@@ -28,6 +28,40 @@ audit artifacts you can hand to another operator._
 > If you build retrieval, eval, or offline doc pipelines, star this repo now.
 > It is the kind of tool you do not need every day, but you will want to find
 > instantly the next time a vendor docsite becomes your ingestion problem.
+
+## First Success In One Command
+
+如果你只愿意先给它 30 秒，不要先从一堆解释开始。先跑这一条：
+
+```bash
+uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
+  docsiphon "https://developerdocs.instructure.com/services/canvas" \
+  --scope-prefix /services/canvas \
+  --max-pages 6 \
+  --out ./_outputs \
+  --site-root auto
+```
+
+跑完以后，你应该立刻看到 3 件事：
+
+- `_outputs/canvas/` 下面出现按路径语义展开的 Markdown 文件树
+- `manifest.jsonl`、`report.json`、`toc.md`、`report.html` 被一起写出来
+- 你可以在不依赖浏览器自动化的前提下，检查一次小而真的 docs export
+
+> 这就像先试开一把钥匙。
+> 先确认门能打开，再决定要不要继续看锁芯结构。
+
+完整解释、更多 profile 和失败排查，继续往下看 [Quickstart](#quickstart)。
+
+## Proof Ladder
+
+不要把这仓的所有资产都看成“差不多一回事”。它们各自只证明一件事：
+
+| 资产 | 它证明什么 | 适合放在哪一屏 |
+| --- | --- | --- |
+| `docsiphon-hero.svg` | 这到底是什么工具 | 首屏 |
+| `docsiphon-before-after.svg` | 为什么它比 naive crawling 更值得试 | 首屏下方 / 第二屏 |
+| `docsiphon-demo.gif` | 跑起来以后你会得到什么样的本地结果 | 第二屏 |
 
 ## Why Docsiphon
 
@@ -58,6 +92,17 @@ It is **not** the right tool when:
 - the site depends on heavy browser-side rendering or authenticated product UX
 - you need to preserve every visual detail of a live site rather than extract
   structured, text-first content
+
+## At A Glance
+
+如果你想先快速做判断，可以先看这一张表：
+
+| 你关心什么 | 当前答案 |
+| --- | --- |
+| 主门是什么 | `CLI-first` |
+| 第一层公开包是什么 | GitHub repo front door + `uvx` quickstart + release assets / example profiles |
+| 成功长什么样 | scoped export + preserved file tree + audit artifacts |
+| 现在不要误会什么 | 这不是 universal website mirror，也不是 browser-heavy product archiver |
 
 ## Current Product Boundary
 
