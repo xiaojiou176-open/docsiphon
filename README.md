@@ -59,6 +59,18 @@ It is **not** the right tool when:
 - you need to preserve every visual detail of a live site rather than extract
   structured, text-first content
 
+## Current Product Boundary
+
+- **Only current primary surface and front door today:** `CLI-first`
+- **Current flagship public packet:** GitHub repo front door + `uvx` quickstart + release assets / example profiles
+- **Future secondary surface only:** MCP-aware secondary surface is allowed later, but it stays **future secondary** until it ships its own install contract, verification gate, public packet, and lane truth
+- **Current start path:** stay on this README + the `uvx` quickstart below before treating any future secondary surface as part of the public flagship path
+
+说得更直白一点：
+
+> 以后可以长 MCP-aware secondary surface，
+> 但今天的主门还是 CLI，而且新的 secondary surface 必须自己补 install contract、verification gate、public packet 和 lane truth。
+
 ## Quickstart
 
 ### Fastest Way To Try It
@@ -331,6 +343,27 @@ Current verification entrypoints:
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the full contributor verification
 commands and the canonical local cleanup path.
+
+## Local Cleanup Contract
+
+Docsiphon already ships a repo-local cleanup path for rebuildable noise:
+
+```bash
+uv run python scripts/clean_local_state.py
+uv run python scripts/clean_local_state.py --apply
+```
+
+Current boundary:
+
+- the script above is the default repo-local cleanup lane today
+- `build/`, `htmlcov/`, `*.egg-info/`, `__pycache__/`, `.pytest_cache/`, and
+  `.runtime-cache/temp/` are disposable local noise
+- `.venv/` is a rebuildable local environment, but it is intentionally **not**
+  part of `clean_local_state.py`
+- `_outputs/` remains operator data and is intentionally excluded from cleanup
+
+This repository does not define a repo-owned Docker cleanup lane today, and the
+cleanup contract above should be read as repo-local only.
 
 ## Documentation
 
