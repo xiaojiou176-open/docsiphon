@@ -38,8 +38,70 @@ REQUIRED_FILES = (
     ".github/ISSUE_TEMPLATE/feature_request.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
     ".github/dependabot.yml",
+    "public-skills/README.md",
+    "public-skills/docsiphon-doc-corpus-operator/README.md",
+    "public-skills/docsiphon-doc-corpus-operator/SKILL.md",
+    "public-skills/docsiphon-doc-corpus-operator/manifest.yaml",
+    "public-skills/docsiphon-doc-corpus-operator/references/README.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/INSTALL.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/DEMO.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/CAPABILITIES.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/TROUBLESHOOTING.md",
     "scripts/clean_local_state.py",
 )
+
+PUBLIC_SKILL_PACKET_SLUG = "docsiphon-doc-corpus-operator"
+
+PUBLIC_SKILL_PACKET_REQUIRED_SNIPPETS = {
+    "public-skills/README.md": (
+        "host-native public skill packets",
+        "secondary lanes",
+        "listed-live",
+        "review-pending",
+    ),
+    f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/README.md": (
+        "host-native public skill packet",
+        "CLI-first",
+        "ClawHub",
+        "OpenHands/extensions",
+        "listed-live",
+        "review-pending",
+    ),
+    f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/SKILL.md": (
+        "host-native secondary lane",
+        "CLI-first",
+        "OpenHands/extensions",
+        "listed-live",
+        "review-pending",
+    ),
+    f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/manifest.yaml": (
+        "schema_version: 1",
+        "docsiphon-doc-corpus-operator",
+        "ClawHub listed-live; OpenHands/extensions review-pending.",
+    ),
+    f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/references/README.md": (
+        "CLI-first",
+        "There is no MCP config in this packet",
+    ),
+    f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/references/INSTALL.md": (
+        "uv run docsiphon --help",
+        "uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git",
+    ),
+    f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/references/DEMO.md": (
+        "--scope-prefix /services/canvas",
+        "--max-pages 6",
+        "manifest.jsonl",
+        "report.json",
+    ),
+    f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/references/CAPABILITIES.md": (
+        "This packet can honestly teach an agent to:",
+        "This packet must not claim:",
+    ),
+    f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/references/TROUBLESHOOTING.md": (
+        "uv sync --group dev",
+        "The export ran, but I do not know what success looks like",
+    ),
+}
 
 README_REQUIRED_SNIPPETS = (
     "## Why Docsiphon",
@@ -124,6 +186,15 @@ PUBLIC_ENGLISH_FIRST_FILES = (
     "docs/index.md",
     "docs/repo-map.md",
     "docs/roadmap.md",
+    "public-skills/README.md",
+    "public-skills/docsiphon-doc-corpus-operator/README.md",
+    "public-skills/docsiphon-doc-corpus-operator/SKILL.md",
+    "public-skills/docsiphon-doc-corpus-operator/manifest.yaml",
+    "public-skills/docsiphon-doc-corpus-operator/references/README.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/INSTALL.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/DEMO.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/CAPABILITIES.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/TROUBLESHOOTING.md",
 )
 
 DISALLOWED_PUBLIC_CJK_RE = re.compile(r"[\u4e00-\u9fff]")
@@ -299,6 +370,17 @@ def collect_errors(repo_root: Path) -> list[str]:
         for snippet in RELEASE_EVIDENCE_REQUIRED_SNIPPETS:
             if snippet not in release_evidence_text:
                 errors.append(f".github/workflows/release-evidence.yml missing required snippet: {snippet}")
+
+    for relative_path, snippets in PUBLIC_SKILL_PACKET_REQUIRED_SNIPPETS.items():
+        path = repo_root / relative_path
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for snippet in snippets:
+            if snippet not in text:
+                errors.append(
+                    f"{relative_path} missing required public skill packet text: {snippet}"
+                )
 
     for relative_path in PUBLIC_ENGLISH_FIRST_FILES:
         path = repo_root / relative_path
