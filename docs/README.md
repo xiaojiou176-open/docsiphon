@@ -33,6 +33,19 @@ primary surface.
 - Latest public release:
   [Release entrypoint](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
 
+## Release Shelf Truth
+
+Use the latest release entrypoint for the newest published artifacts and
+starter profiles.
+
+Use the repo front door and Pages docs for the newest repository-side truth on
+`main`.
+
+Those two surfaces should stay aligned, but they do not mean the same thing:
+the release shelf is the newest tagged package set, while the README and Pages
+can move ahead with front-door or governance updates before the next release is
+cut.
+
 ## What Lives Where
 
 - `docs/index.md`: the smallest public landing page for Pages visitors

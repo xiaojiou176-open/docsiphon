@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 from pathlib import Path
 
 
@@ -48,6 +49,7 @@ README_REQUIRED_SNIPPETS = (
     "## Real Example Output",
     "## Evidence Snapshot",
     "## Community Pulse",
+    "## Release Shelf Truth",
     "## Documentation",
     "## Verification",
     "## Collaboration",
@@ -63,6 +65,7 @@ README_REQUIRED_SNIPPETS = (
 
 DOCS_README_REQUIRED_SNIPPETS = (
     "## Canonical Entrypoints",
+    "## Release Shelf Truth",
     "## What Lives Where",
     "## Verification Entry Points",
     "## Support Boundary",
@@ -74,6 +77,7 @@ DOCS_README_REQUIRED_SNIPPETS = (
 
 DOCS_INDEX_REQUIRED_SNIPPETS = (
     "## Fastest Path",
+    "## Release Shelf Truth",
     "## Why It Exists",
     "## Best Fit",
     "GitHub repository front door",
@@ -85,6 +89,7 @@ REPO_MAP_REQUIRED_SNIPPETS = (
     "## Repository Layout",
     "## Execution Model",
     "## Output Semantics",
+    "## Release Shelf Truth",
     "## Verification Entry Points",
     "## Support Boundary",
     "For the full contributor verification commands",
@@ -101,6 +106,7 @@ LEDGER_REQUIRED_ITEMS = (
     "topics",
     "discussions",
     "branch_protection_main",
+    "release_shelf",
     "private_vulnerability_reporting",
     "custom_social_preview",
 )
@@ -109,6 +115,39 @@ LEDGER_ALLOWED_STATUSES = {
     "verified",
     "manual_required",
     "unknown",
+}
+
+PUBLIC_ENGLISH_FIRST_FILES = (
+    "README.md",
+    "docs/README.md",
+    "docs/index.md",
+    "docs/repo-map.md",
+    "docs/roadmap.md",
+)
+
+DISALLOWED_PUBLIC_CJK_RE = re.compile(r"[\u4e00-\u9fff]")
+
+RELEASE_SHELF_TRUTH_REQUIRED_SNIPPETS = {
+    "README.md": (
+        "newest **published**",
+        "truth on `main`",
+        "not the same shelf",
+    ),
+    "docs/README.md": (
+        "newest published artifacts",
+        "repository-side truth on",
+        "newest tagged package set",
+    ),
+    "docs/index.md": (
+        "published wheel, sdist, and starter-profile assets",
+        "newest repository truth",
+        "neighboring shelves",
+    ),
+    "docs/repo-map.md": (
+        "newest published artifacts",
+        "front-door truth on `main`",
+        "Do not compress those into one claim",
+    ),
 }
 
 RELEASE_EVIDENCE_REQUIRED_SNIPPETS = (
@@ -259,6 +298,27 @@ def collect_errors(repo_root: Path) -> list[str]:
         for snippet in RELEASE_EVIDENCE_REQUIRED_SNIPPETS:
             if snippet not in release_evidence_text:
                 errors.append(f".github/workflows/release-evidence.yml missing required snippet: {snippet}")
+
+    for relative_path in PUBLIC_ENGLISH_FIRST_FILES:
+        path = repo_root / relative_path
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        if DISALLOWED_PUBLIC_CJK_RE.search(text):
+            errors.append(
+                f"{relative_path} contains non-normalized Chinese text on the public English-first surface"
+            )
+
+    for relative_path, snippets in RELEASE_SHELF_TRUTH_REQUIRED_SNIPPETS.items():
+        path = repo_root / relative_path
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for snippet in snippets:
+            if snippet not in text:
+                errors.append(
+                    f"{relative_path} missing release-shelf truth detail: {snippet}"
+                )
 
     return errors
 
