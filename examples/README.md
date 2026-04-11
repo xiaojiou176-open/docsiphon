@@ -29,12 +29,12 @@ Or use named profiles if you consolidate your own TOML file under
 
 ## Current Release Assets
 
-If you do not want to clone the repository first, the current `v0.1.1` release
+If you do not want to clone the repository first, the current `v0.1.2` release
 ships copyable profile assets directly:
 
-- [canvas-quickstart.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.1/canvas-quickstart.toml)
-- [rag-corpus.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.1/rag-corpus.toml)
-- [strict-audit.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.1/strict-audit.toml)
+- [canvas-quickstart.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.2/canvas-quickstart.toml)
+- [rag-corpus.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.2/rag-corpus.toml)
+- [strict-audit.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.2/strict-audit.toml)
 
 That path is meant for evaluators who want to try Docsiphon with `uvx` and a
 ready-made profile before they decide whether the repository deserves a local
