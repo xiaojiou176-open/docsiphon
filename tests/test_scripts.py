@@ -246,6 +246,7 @@ class TestScripts(unittest.TestCase):
         self.assertIn('<main id="main-content" role="main" markdown="1">', content)
         self.assertIn("text-decoration: underline;", content)
         self.assertIn("text-underline-offset: 0.16em;", content)
+        self.assertIn('footer.setAttribute("role", "contentinfo");', content)
 
 
 if __name__ == "__main__":
