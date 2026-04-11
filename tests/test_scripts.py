@@ -139,7 +139,7 @@ class TestScripts(unittest.TestCase):
         self.assertEqual(self._gif_size(assets_root / "docsiphon-demo.gif"), (960, 540))
 
     def test_release_draft_exists(self):
-        self.assertTrue(Path(".github/release-body-v0.1.1.md").exists())
+        self.assertTrue(Path(".github/release-body-v0.1.2.md").exists())
 
     def test_agent_navigation_files_exist(self):
         self.assertTrue(Path("AGENTS.md").exists())
@@ -177,7 +177,7 @@ class TestScripts(unittest.TestCase):
         self.assertTrue(Path("examples/strict-audit.toml").exists())
 
     def test_release_body_mentions_docs_and_profiles(self):
-        content = self._read(".github/release-body-v0.1.1.md")
+        content = self._read(".github/release-body-v0.1.2.md")
         self.assertIn("Public evidence snapshot", content)
         self.assertIn("Downloadable starter profiles", content)
         self.assertIn("GitHub docs entry", content)

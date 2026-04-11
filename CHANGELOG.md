@@ -35,6 +35,22 @@ workflow.
 - raised the `requests` floor to `>=2.33.0` to close Dependabot alert
   `GHSA-gc5v-m9x4-r6x2` / `CVE-2026-25645`
 
+## [0.1.2]
+
+### Added
+- release-shelf truth sections across the GitHub and Pages front doors so
+  latest published release and current `main` truth are no longer flattened
+- public-language contract checks for the English-first front door
+- Pages landmark and footer landmark hardening that clears the live axe rerun
+
+### Changed
+- normalized the public front door to English-first wording
+- extended the public surface ledger with `release_shelf`
+- taught contract and hygiene gates about the Pages layout-backed footer
+  landmark repair
+- refreshed release-facing links and release-body references from `v0.1.1` to
+  `v0.1.2`
+
 ## [0.1.1]
 
 ### Added

@@ -173,11 +173,11 @@ AI systems and humans to inspect.
 ### Copyable Profiles Without a Checkout
 
 If you want a first run with less flag typing after the default path works,
-download one of the current `v0.1.1` release assets first:
+download one of the current `v0.1.2` release assets first:
 
-- [canvas-quickstart.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.1/canvas-quickstart.toml)
-- [rag-corpus.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.1/rag-corpus.toml)
-- [strict-audit.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.1/strict-audit.toml)
+- [canvas-quickstart.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.2/canvas-quickstart.toml)
+- [rag-corpus.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.2/rag-corpus.toml)
+- [strict-audit.toml](https://github.com/xiaojiou176-open/docsiphon/releases/download/v0.1.2/strict-audit.toml)
 
 Then run Docsiphon with the profile you downloaded:
 
@@ -334,7 +334,7 @@ well-written or actually grounded in runnable evidence.
 | Sitemap-scoped export | A fresh sample run discovered `336` URLs through sitemap, scheduled `6`, wrote `6`, and failed `0` under `--scope-prefix /services/canvas --max-pages 6` | `uv run docsiphon "https://developerdocs.instructure.com/services/canvas" --scope-prefix /services/canvas --max-pages 6 --out /tmp/docsiphon-sample --site-root auto` | Shows the "small first success" story is not hypothetical |
 | Discovery coverage | The current engine covers `llms.txt`, sitemap, search index, and BFS fallback in code and automated tests | `uv run pytest tests/test_discovery.py tests/test_discovery_more.py` | Explains why Docsiphon is more than a single-site probe |
 | Audit artifacts | `manifest.jsonl`, `report.json`, `index.json`, `toc.md`, `report.html`, and sampled `_errors/` snapshots all have dedicated test coverage | `uv run pytest tests/test_report.py tests/test_storage.py tests/test_cli_run.py` | This is the part generic mirrors usually do not give you |
-| Release assets and copyable profiles | The latest public release ships hero/demo/social-preview assets plus downloadable starter profiles | [Release v0.1.1](https://github.com/xiaojiou176-open/docsiphon/releases/tag/v0.1.1) | Lets evaluators try the repo without reverse-engineering local setup |
+| Release assets and copyable profiles | The latest public release ships hero/demo/social-preview assets plus downloadable starter profiles | [Release v0.1.2](https://github.com/xiaojiou176-open/docsiphon/releases/tag/v0.1.2) | Lets evaluators try the repo without reverse-engineering local setup |
 
 Evidence refreshed from a local verification run on `2026-03-26`.
 
@@ -447,7 +447,7 @@ The public docs surface stays intentionally thin and high-signal.
 - GitHub Pages landing page: `docs/index.md`
 - GitHub Pages repo map: `docs/repo-map.md`
 - Latest public release: `https://github.com/xiaojiou176-open/docsiphon/releases/latest`
-- Release body source for `v0.1.1`: `.github/release-body-v0.1.1.md`
+- Release body source for `v0.1.2`: `.github/release-body-v0.1.2.md`
 - GitHub social preview source file for repository settings:
   `assets/docsiphon-social-preview.png`
 - Citation metadata: `CITATION.cff`
