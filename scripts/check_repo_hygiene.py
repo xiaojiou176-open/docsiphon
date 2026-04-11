@@ -279,6 +279,10 @@ def collect_docs_surface_errors(repo_root: Path) -> list[str]:
         "repo-map.md",
         "robots.txt",
         "sitemap.xml",
+        "default.html",
+    }
+    allowed_docs_dirs = {
+        docs_root / "_layouts",
     }
 
     if not docs_root.is_dir():
@@ -288,7 +292,7 @@ def collect_docs_surface_errors(repo_root: Path) -> list[str]:
     for path in docs_root.rglob("*"):
         rel = path.relative_to(repo_root)
         if path.is_dir():
-            if path != docs_root:
+            if path != docs_root and path not in allowed_docs_dirs:
                 errors.append(f"unexpected docs directory present: {rel}")
             continue
         if path.name not in allowed_docs_files:

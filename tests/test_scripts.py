@@ -64,6 +64,7 @@ class TestScripts(unittest.TestCase):
         self.assertIn("CITATION.cff", content)
         self.assertIn("README.md", content)
         self.assertIn("docs/README.md", content)
+        self.assertIn("docs/_layouts/default.html", content)
         self.assertIn("docs/repo-map.md", content)
         self.assertIn("docs/robots.txt", content)
         self.assertIn("docs/sitemap.xml", content)
@@ -118,7 +119,7 @@ class TestScripts(unittest.TestCase):
         self.assertTrue((docs_root / "sitemap.xml").exists())
         self.assertEqual(
             {p.name for p in docs_root.iterdir()},
-            {"README.md", "index.md", "roadmap.md", "_config.yml", "repo-map.md", "robots.txt", "sitemap.xml"},
+            {"README.md", "index.md", "roadmap.md", "_config.yml", "_layouts", "repo-map.md", "robots.txt", "sitemap.xml"},
         )
 
     def test_public_visual_assets_exist(self):
@@ -246,7 +247,8 @@ class TestScripts(unittest.TestCase):
         self.assertIn('<main id="main-content" role="main" markdown="1">', content)
         self.assertIn("text-decoration: underline;", content)
         self.assertIn("text-underline-offset: 0.16em;", content)
-        self.assertIn('footer.setAttribute("role", "contentinfo");', content)
+        layout = self._read("docs/_layouts/default.html")
+        self.assertIn('role="contentinfo"', layout)
 
 
 if __name__ == "__main__":
