@@ -70,6 +70,10 @@ class TestScripts(unittest.TestCase):
         self.assertIn("docs/sitemap.xml", content)
         self.assertIn(".github/public-surface-ledger.yml", content)
         self.assertIn(".github/workflows/release-evidence.yml", content)
+        self.assertIn("public-skills/README.md", content)
+        self.assertIn("public-skills/docsiphon-doc-corpus-operator/README.md", content)
+        self.assertIn("public-skills/docsiphon-doc-corpus-operator/SKILL.md", content)
+        self.assertIn("public-skills/docsiphon-doc-corpus-operator/manifest.yaml", content)
         self.assertIn("scripts/clean_local_state.py", content)
         self.assertIn("## Release Shelf Truth", content)
         self.assertIn("Why Docsiphon", content)
@@ -98,6 +102,7 @@ class TestScripts(unittest.TestCase):
         self.assertIn(".DS_Store", content)
         self.assertIn(".egg-info", content)
         self.assertIn(".pre-commit-config.yaml", content)
+        self.assertIn("public-skills", content)
         self.assertIn("docsite_md_exporter", content)
         self.assertIn("requirements.txt", content)
         self.assertIn("git ls-files", content)
@@ -175,6 +180,18 @@ class TestScripts(unittest.TestCase):
         self.assertTrue(Path("examples/canvas-quickstart.toml").exists())
         self.assertTrue(Path("examples/rag-corpus.toml").exists())
         self.assertTrue(Path("examples/strict-audit.toml").exists())
+
+    def test_public_skill_packet_exists(self):
+        packet_root = Path("public-skills") / "docsiphon-doc-corpus-operator"
+        self.assertTrue((Path("public-skills") / "README.md").exists())
+        self.assertTrue((packet_root / "README.md").exists())
+        self.assertTrue((packet_root / "SKILL.md").exists())
+        self.assertTrue((packet_root / "manifest.yaml").exists())
+        self.assertTrue((packet_root / "references" / "README.md").exists())
+        self.assertTrue((packet_root / "references" / "INSTALL.md").exists())
+        self.assertTrue((packet_root / "references" / "DEMO.md").exists())
+        self.assertTrue((packet_root / "references" / "CAPABILITIES.md").exists())
+        self.assertTrue((packet_root / "references" / "TROUBLESHOOTING.md").exists())
 
     def test_release_body_mentions_docs_and_profiles(self):
         content = self._read(".github/release-body-v0.1.2.md")

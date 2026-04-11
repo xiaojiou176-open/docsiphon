@@ -38,6 +38,15 @@ REQUIRED_FILES = (
     ".github/ISSUE_TEMPLATE/feature_request.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
     ".github/dependabot.yml",
+    "public-skills/README.md",
+    "public-skills/docsiphon-doc-corpus-operator/README.md",
+    "public-skills/docsiphon-doc-corpus-operator/SKILL.md",
+    "public-skills/docsiphon-doc-corpus-operator/manifest.yaml",
+    "public-skills/docsiphon-doc-corpus-operator/references/README.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/INSTALL.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/DEMO.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/CAPABILITIES.md",
+    "public-skills/docsiphon-doc-corpus-operator/references/TROUBLESHOOTING.md",
     "scripts/clean_local_state.py",
 )
 
@@ -58,6 +67,7 @@ README_REQUIRED_SNIPPETS = (
     "## FAQ",
     "## License",
     "examples/README.md",
+    "public-skills/README.md",
     "See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the full contributor verification",
     "Security",
     "Contributing",
@@ -124,6 +134,9 @@ PUBLIC_ENGLISH_FIRST_FILES = (
     "docs/index.md",
     "docs/repo-map.md",
     "docs/roadmap.md",
+    "public-skills/README.md",
+    "public-skills/docsiphon-doc-corpus-operator/README.md",
+    "public-skills/docsiphon-doc-corpus-operator/SKILL.md",
 )
 
 DISALLOWED_PUBLIC_CJK_RE = re.compile(r"[\u4e00-\u9fff]")

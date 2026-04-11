@@ -54,7 +54,6 @@ cut.
 - `docs/roadmap.md`: the stable public roadmap summary
 - `README.md`: the full project front door with install, usage, and verification
   guidance
-
 ## Verification Entry Points
 
 For the full contributor verification commands, use

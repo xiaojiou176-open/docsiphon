@@ -72,6 +72,7 @@ ROOT_ALLOWLIST = {
     "examples",
     "LICENSE",
     "pyproject.toml",
+    "public-skills",
     "README.md",
     "scripts",
     "SECURITY.md",
