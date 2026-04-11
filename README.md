@@ -31,7 +31,8 @@ audit artifacts you can hand to another operator._
 
 ## First Success In One Command
 
-如果你只愿意先给它 30 秒，不要先从一堆解释开始。先跑这一条：
+If you only want to give Docsiphon 30 seconds, do not start with a wall of
+explanation. Start with this:
 
 ```bash
 uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
@@ -42,26 +43,32 @@ uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
   --site-root auto
 ```
 
-跑完以后，你应该立刻看到 3 件事：
+After the command finishes, you should see three concrete signals right away:
 
-- `_outputs/canvas/` 下面出现按路径语义展开的 Markdown 文件树
-- `manifest.jsonl`、`report.json`、`toc.md`、`report.html` 被一起写出来
-- 你可以在不依赖浏览器自动化的前提下，检查一次小而真的 docs export
+- `_outputs/canvas/` contains a Markdown tree that still follows source-path
+  semantics
+- `manifest.jsonl`, `report.json`, `toc.md`, and `report.html` are written as a
+  reviewable audit bundle
+- you can inspect one small but real documentation export without bringing in
+  browser automation
 
-> 这就像先试开一把钥匙。
-> 先确认门能打开，再决定要不要继续看锁芯结构。
+> Think of this like testing a key before remodeling the whole lock.
+> Confirm the door opens first, then decide whether you want the deeper
+> mechanics.
 
-完整解释、更多 profile 和失败排查，继续往下看 [Quickstart](#quickstart)。
+For the longer explanation, copyable profiles, and troubleshooting path,
+continue to [Quickstart](#quickstart).
 
 ## Proof Ladder
 
-不要把这仓的所有资产都看成“差不多一回事”。它们各自只证明一件事：
+Do not treat every public asset in this repository as interchangeable. Each one
+proves a different part of the story:
 
-| 资产 | 它证明什么 | 适合放在哪一屏 |
+| Asset | What it proves | Best placement |
 | --- | --- | --- |
-| `docsiphon-hero.svg` | 这到底是什么工具 | 首屏 |
-| `docsiphon-before-after.svg` | 为什么它比 naive crawling 更值得试 | 首屏下方 / 第二屏 |
-| `docsiphon-demo.gif` | 跑起来以后你会得到什么样的本地结果 | 第二屏 |
+| `docsiphon-hero.svg` | What the tool is | First screen |
+| `docsiphon-before-after.svg` | Why it is worth trying over naive crawling | Below the fold / second screen |
+| `docsiphon-demo.gif` | What a real local result looks like after the first run | Second screen |
 
 ## Why Docsiphon
 
@@ -95,14 +102,14 @@ It is **not** the right tool when:
 
 ## At A Glance
 
-如果你想先快速做判断，可以先看这一张表：
+If you want a fast filter before reading deeper, start with this table:
 
-| 你关心什么 | 当前答案 |
+| What you need to know | Current answer |
 | --- | --- |
-| 主门是什么 | `CLI-first` |
-| 第一层公开包是什么 | GitHub repo front door + `uvx` quickstart + release assets / example profiles |
-| 成功长什么样 | scoped export + preserved file tree + audit artifacts |
-| 现在不要误会什么 | 这不是 universal website mirror，也不是 browser-heavy product archiver |
+| Primary surface | `CLI-first` |
+| Current flagship public packet | GitHub repo front door + `uvx` quickstart + release assets / example profiles |
+| What success looks like | scoped export + preserved file tree + audit artifacts |
+| What not to assume | This is not a universal website mirror or a browser-heavy product archiver |
 
 ## Current Product Boundary
 
@@ -111,10 +118,12 @@ It is **not** the right tool when:
 - **Future secondary surface only:** MCP-aware secondary surface is allowed later, but it stays **future secondary** until it ships its own install contract, verification gate, public packet, and lane truth
 - **Current start path:** stay on this README + the `uvx` quickstart below before treating any future secondary surface as part of the public flagship path
 
-说得更直白一点：
+Put more plainly:
 
-> 以后可以长 MCP-aware secondary surface，
-> 但今天的主门还是 CLI，而且新的 secondary surface 必须自己补 install contract、verification gate、public packet 和 lane truth。
+> Docsiphon can grow an MCP-aware secondary surface later.
+> Today, the front door is still the CLI, and any new secondary surface must
+> earn its own install contract, verification gate, public packet, and lane
+> truth.
 
 ## Quickstart
 
@@ -177,6 +186,26 @@ uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
   docsiphon "https://developerdocs.instructure.com/services/canvas" \
   --profile ./canvas-quickstart.toml
 ```
+
+## Release Shelf Truth
+
+Use the latest release entrypoint when you want the newest **published**
+artifact shelf:
+
+- tagged wheel / sdist builds
+- downloadable starter profiles
+- release notes for the current published cut
+
+Use the README and Pages docs when you want the newest **repository**
+truth on `main`:
+
+- current front-door wording
+- current governance and docs contracts
+- the latest Pages routing surface
+
+These are related, but they are not the same shelf. A future `main` commit can
+move the docs, governance, or Pages truth forward before a new tagged release
+is cut.
 
 ### If The First Run Does Not Work
 

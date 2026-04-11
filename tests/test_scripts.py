@@ -48,6 +48,9 @@ class TestScripts(unittest.TestCase):
         self.assertIn("DOCS_README_REQUIRED_SNIPPETS", content)
         self.assertIn("DOCS_INDEX_REQUIRED_SNIPPETS", content)
         self.assertIn("REPO_MAP_REQUIRED_SNIPPETS", content)
+        self.assertIn("PUBLIC_ENGLISH_FIRST_FILES", content)
+        self.assertIn("DISALLOWED_PUBLIC_CJK_RE", content)
+        self.assertIn("RELEASE_SHELF_TRUTH_REQUIRED_SNIPPETS", content)
         self.assertIn("DOCS_CONFIG_REQUIRED_SNIPPETS", content)
         self.assertIn("ROBOTS_REQUIRED_SNIPPETS", content)
         self.assertIn("SITEMAP_REQUIRED_SNIPPETS", content)
@@ -67,6 +70,7 @@ class TestScripts(unittest.TestCase):
         self.assertIn(".github/public-surface-ledger.yml", content)
         self.assertIn(".github/workflows/release-evidence.yml", content)
         self.assertIn("scripts/clean_local_state.py", content)
+        self.assertIn("## Release Shelf Truth", content)
         self.assertIn("Why Docsiphon", content)
         self.assertIn("Quickstart", content)
         self.assertIn("Real Example Output", content)
@@ -199,12 +203,28 @@ class TestScripts(unittest.TestCase):
             "topics",
             "discussions",
             "branch_protection_main",
+            "release_shelf",
             "private_vulnerability_reporting",
             "custom_social_preview",
         ):
             self.assertIn(f"item: {item}", content)
         self.assertIn("status: verified", content)
         self.assertIn("status: manual_required", content)
+
+    def test_public_front_doors_keep_english_primary_language(self):
+        pattern = re.compile(r"[\u4e00-\u9fff]")
+        for path in (
+            "README.md",
+            "docs/README.md",
+            "docs/index.md",
+            "docs/repo-map.md",
+            "docs/roadmap.md",
+        ):
+            content = self._read(path)
+            self.assertIsNone(
+                pattern.search(content),
+                msg=f"{path} should stay English-first on the public-facing surface",
+            )
 
     def test_clean_local_state_script_exists_and_targets_noise(self):
         content = self._read("scripts/clean_local_state.py")
@@ -220,6 +240,12 @@ class TestScripts(unittest.TestCase):
             self.assertIn("CONTRIBUTING.md", content)
             self.assertNotIn("uv run python scripts/check_contracts.py", content)
             self.assertNotIn("uv run python scripts/check_repo_hygiene.py", content)
+
+    def test_pages_index_keeps_main_landmark_and_link_visibility_styles(self):
+        content = self._read("docs/index.md")
+        self.assertIn('<main id="main-content" role="main" markdown="1">', content)
+        self.assertIn("text-decoration: underline;", content)
+        self.assertIn("text-underline-offset: 0.16em;", content)
 
 
 if __name__ == "__main__":

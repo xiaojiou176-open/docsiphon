@@ -3,6 +3,16 @@ title: Docsiphon
 description: Export documentation sites into AI-ready local Markdown corpora with preserved paths, reproducible runs, and audit artifacts.
 ---
 
+<style>
+.markdown-body a {
+  color: #0550ae;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+</style>
+
+<main id="main-content" role="main" markdown="1">
+
 # Docsiphon
 
 Export documentation sites into **AI-ready local Markdown corpora** with
@@ -32,11 +42,12 @@ uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
 
 ## What You Get
 
-一次最小成功应该给你 3 类东西，而不是一堆没法复盘的抓取碎片：
+A minimal first success should give you three kinds of output, not a pile of
+untraceable crawl fragments:
 
 - preserved Markdown tree
 - run ledger artifacts: `manifest.jsonl`, `report.json`, `toc.md`, `report.html`
-- 一份可继续 diff、resume、handoff 的本地 docs corpus
+- a local docs corpus you can diff, resume, and hand off
 
 ## Why It Exists
 
@@ -52,10 +63,24 @@ uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
 
 ## Why Not Generic Crawlers
 
-因为真正麻烦的不是“抓到页面”，而是“以后还能看懂、还能对账、还能继续用”。
+Because the hard part is not "did we fetch the page?" The hard part is whether
+the result is still understandable, auditable, and reusable later.
 
-> 通用 crawler 更像把文件柜整柜倒在地上。
-> Docsiphon 想做的是把文件按标签重新装回可用的文件夹。
+> A generic crawler is closer to dumping the whole filing cabinet onto the
+> floor.
+> Docsiphon is trying to put the papers back into labeled folders you can use
+> again.
+
+## Release Shelf Truth
+
+The latest release entrypoint is the right place to look for the newest
+published wheel, sdist, and starter-profile assets.
+
+This Pages surface and the repo front door describe the newest repository truth
+on `main`, which can move ahead before the next tagged release is cut.
+
+Treat "latest release" and "current main" as neighboring shelves, not as the
+same object.
 
 ## Start Here
 
@@ -69,3 +94,5 @@ uvx --from git+https://github.com/xiaojiou176-open/docsiphon.git \
   [latest release](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
 - Community discussions:
   [GitHub Discussions](https://github.com/xiaojiou176-open/docsiphon/discussions)
+
+</main>

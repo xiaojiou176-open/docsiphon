@@ -34,10 +34,10 @@ packet, and lane truth.
 
 | Area | What lives here | Why it exists |
 | --- | --- | --- |
-| Front Door | README + `uvx` quickstart | 最快把人带到 first success |
-| Execution Model | CLI-driven export pipeline | 解释它怎么工作，而不是先讲平台梦 |
-| Output Artifacts | `manifest.jsonl`, `report.json`, `index.json`, `toc.md`, `report.html` | 证明它不是一次性抓取，而是可复盘工件 |
-| Support Boundary | `CLI-first`, no hosted API, future MCP stays secondary | 防止把“可能会做”误读成“今天已经在卖” |
+| Front Door | README + `uvx` quickstart | Get visitors to a real first success fast |
+| Execution Model | CLI-driven export pipeline | Explain how it works without pretending it is a hosted platform |
+| Output Artifacts | `manifest.jsonl`, `report.json`, `index.json`, `toc.md`, `report.html` | Prove the result is reviewable, not a one-shot scrape |
+| Support Boundary | `CLI-first`, no hosted API, future MCP stays secondary | Stop future ideas from being misread as current shipping surfaces |
 
 ## Repository Layout
 
@@ -74,6 +74,15 @@ Important run artifacts:
 - `_errors/`: sampled error snapshots
 
 Generated outputs are operator data and must stay out of Git.
+
+## Release Shelf Truth
+
+- Use the GitHub release entrypoint for the newest published artifacts and
+  starter profiles.
+- Use `README.md`, `docs/index.md`, and this map for the newest repository-side
+  front-door truth on `main`.
+- Do not compress those into one claim. A release shelf can lag behind current
+  docs and governance wording until the next tagged cut is published.
 
 ## Verification Entry Points
 
