@@ -25,6 +25,11 @@ items:
     source: gh_api_branch_protection
     last_verified_utc: "2026-04-09T18:34:25Z"
     notes: "Fresh read-back after Wave 2 remote closure: main now requires strict checks, 1 approving review, required signatures, linear history, and blocks force-push/delete."
+  - item: release_shelf
+    status: verified
+    source: gh_release_latest
+    last_verified_utc: "2026-04-09T18:34:25Z"
+    notes: "The latest release entrypoint is the canonical shelf for the newest published assets and starter profiles. Treat it separately from current main-branch docs and governance truth."
   - item: private_vulnerability_reporting
     status: verified
     source: gh_api_private_vulnerability_reporting
