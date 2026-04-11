@@ -44,6 +44,8 @@ class TestScripts(unittest.TestCase):
         path = os.path.join("scripts", "check_contracts.py")
         content = self._read(path)
         self.assertIn("REQUIRED_FILES", content)
+        self.assertIn("PUBLIC_SKILL_PACKET_SLUG", content)
+        self.assertIn("PUBLIC_SKILL_PACKET_REQUIRED_SNIPPETS", content)
         self.assertIn("README_REQUIRED_SNIPPETS", content)
         self.assertIn("DOCS_README_REQUIRED_SNIPPETS", content)
         self.assertIn("DOCS_INDEX_REQUIRED_SNIPPETS", content)
@@ -193,6 +195,24 @@ class TestScripts(unittest.TestCase):
         self.assertTrue((packet_root / "references" / "CAPABILITIES.md").exists())
         self.assertTrue((packet_root / "references" / "TROUBLESHOOTING.md").exists())
 
+        inventory = self._read("public-skills/README.md")
+        readme = self._read(str(packet_root / "README.md"))
+        skill = self._read(str(packet_root / "SKILL.md"))
+        manifest = self._read(str(packet_root / "manifest.yaml"))
+        self.assertIn("listed-live", inventory)
+        self.assertIn("review-pending", inventory)
+        self.assertIn("host-native public skill packet", readme)
+        self.assertIn("CLI-first", readme)
+        self.assertIn("OpenHands/extensions", readme)
+        self.assertIn("listed-live", readme)
+        self.assertIn("review-pending", readme)
+        self.assertIn("host-native secondary lane", skill)
+        self.assertIn("listed-live", skill)
+        self.assertIn("review-pending", skill)
+        self.assertIn("schema_version: 1", manifest)
+        self.assertIn("docsiphon-doc-corpus-operator", manifest)
+        self.assertIn("ClawHub listed-live; OpenHands/extensions review-pending.", manifest)
+
     def test_release_body_mentions_docs_and_profiles(self):
         content = self._read(".github/release-body-v0.1.2.md")
         self.assertIn("Public evidence snapshot", content)
@@ -237,6 +257,15 @@ class TestScripts(unittest.TestCase):
             "docs/index.md",
             "docs/repo-map.md",
             "docs/roadmap.md",
+            "public-skills/README.md",
+            "public-skills/docsiphon-doc-corpus-operator/README.md",
+            "public-skills/docsiphon-doc-corpus-operator/SKILL.md",
+            "public-skills/docsiphon-doc-corpus-operator/manifest.yaml",
+            "public-skills/docsiphon-doc-corpus-operator/references/README.md",
+            "public-skills/docsiphon-doc-corpus-operator/references/INSTALL.md",
+            "public-skills/docsiphon-doc-corpus-operator/references/DEMO.md",
+            "public-skills/docsiphon-doc-corpus-operator/references/CAPABILITIES.md",
+            "public-skills/docsiphon-doc-corpus-operator/references/TROUBLESHOOTING.md",
         ):
             content = self._read(path)
             self.assertIsNone(

@@ -18,8 +18,9 @@ Current packet inventory:
 
 Current registry truth:
 
-- `ClawHub`: `not submitted yet`
-- `OpenHands/extensions`: `not submitted yet`
+- `ClawHub`: `listed-live`
+- `OpenHands/extensions`: `review-pending`
 
 That wording is intentional.
-This folder is packet-ready, not listing-ready.
+This folder is now packet-ready and partially submitted, but it is still a
+secondary lane rather than the flagship public packet.

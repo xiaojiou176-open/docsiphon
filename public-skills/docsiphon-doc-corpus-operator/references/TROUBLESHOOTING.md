@@ -5,6 +5,13 @@
 Install `uv` first:
 https://docs.astral.sh/uv/getting-started/installation/
 
+If you already have a checkout, you can recover the local path with:
+
+```bash
+uv sync --group dev
+uv run docsiphon --help
+```
+
 ## The export ran, but I do not know what success looks like
 
 Check for these files:

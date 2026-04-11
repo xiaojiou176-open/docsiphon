@@ -26,8 +26,8 @@ inspect the resulting export artifacts from a repo checkout or `uvx` path.
 
 ## Current registry truth
 
-- `ClawHub`: `not submitted yet`
-- `OpenHands/extensions`: `not submitted yet`
+- `ClawHub`: `listed-live`
+- `OpenHands/extensions`: `review-pending`
 
 ## First-success flow
 

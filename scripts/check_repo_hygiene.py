@@ -27,6 +27,7 @@ TEXT_SCAN_ROOTS = (
     "assets",
     "design-system",
     "examples",
+    "public-skills",
     "scripts",
     "src",
     "tests",

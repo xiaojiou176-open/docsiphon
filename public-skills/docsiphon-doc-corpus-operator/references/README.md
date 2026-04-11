@@ -13,3 +13,6 @@ Use these files in this order:
 The goal is simple:
 get one small, reviewable export through the current CLI-first path before you
 claim anything bigger.
+
+There is no MCP config in this packet because this skill teaches the current
+CLI-first export lane rather than a shipped MCP bridge.

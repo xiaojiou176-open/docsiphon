@@ -42,8 +42,8 @@ This packet teaches an agent how to:
 
 ## Current registry truth
 
-- `ClawHub`: `not submitted yet`
-- `OpenHands/extensions`: `not submitted yet`
+- `ClawHub`: `listed-live`
+- `OpenHands/extensions`: `review-pending`
 
 This packet is still a **secondary host-native lane**.
 It does not replace the current `CLI-first` primary surface.
@@ -51,7 +51,6 @@ It does not replace the current `CLI-first` primary surface.
 ## What this packet must not claim
 
 - no hosted documentation export platform
-- no listed-live ClawHub entry yet
 - no listed-live OpenHands/extensions entry yet
 - no MCP-first product positioning
 
