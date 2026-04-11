@@ -20,6 +20,7 @@ REQUIRED_FILES = (
     "README.md",
     "docs/README.md",
     "docs/_config.yml",
+    "docs/_layouts/default.html",
     "examples/README.md",
     "examples/canvas-quickstart.toml",
     "examples/rag-corpus.toml",

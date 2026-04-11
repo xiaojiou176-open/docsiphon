@@ -96,12 +96,3 @@ same object.
   [GitHub Discussions](https://github.com/xiaojiou176-open/docsiphon/discussions)
 
 </main>
-
-<script>
-  (function () {
-    const footer = document.querySelector(".footer");
-    if (footer) {
-      footer.setAttribute("role", "contentinfo");
-    }
-  })();
-</script>
