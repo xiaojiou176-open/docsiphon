@@ -27,14 +27,19 @@ registry_targets:
     package_shape: skill-folder
     submission_ref: https://github.com/OpenHands/extensions/pull/163
     blocker: Maintainer closed the lane and pointed contributors to a custom marketplace.json distribution alternative instead of an upstream listing.
+  awesome-opencode:
+    status: not_honest_cargo_yet
+    package_shape: none
+    blocker: The current packet is a host-native skill folder for a CLI-first docs export lane, not an honest opencode-native project/resource entry today.
 
 boundaries:
   product_identity: CLI-first documentation corpus export packet for Docsiphon.
   canonical_repo_version: 0.1.2
-  listing_state_summary: ClawHub listed-live; Goose review-pending; agent-skill.co blocked by external Vercel authorization; OpenHands/extensions closed-not-accepted.
+  listing_state_summary: ClawHub listed-live; Goose review-pending; agent-skill.co blocked by external Vercel authorization; OpenHands/extensions closed-not-accepted; awesome-opencode not_honest_cargo_yet.
   not_claimed:
     - No listed-live Goose or agent-skill.co entry exists yet
     - No listed-live OpenHands/extensions entry exists; that lane was closed instead
+    - No awesome-opencode entry exists; current packet is not honest opencode cargo yet
     - No hosted docs export platform exists yet
     - No MCP-first product claim exists yet
 

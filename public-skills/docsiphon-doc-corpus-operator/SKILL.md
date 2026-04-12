@@ -30,6 +30,7 @@ inspect the resulting export artifacts from a repo checkout or `uvx` path.
 - `Goose Skills Marketplace`: `review-pending` via `https://github.com/block/agent-skills/pull/24`
 - `agent-skill.co source repo`: `platform-not-accepted-yet` via `https://github.com/heilcheng/awesome-agent-skills/pull/180`
 - `OpenHands/extensions`: `closed-not-accepted`; maintainer recommended a custom `marketplace.json` distribution instead
+- `awesome-opencode`: `not_honest_cargo_yet`; the current packet is a host-native skill folder for a CLI-first docs export lane, not an honest opencode-native project/resource entry today
 
 ## First-success flow
 

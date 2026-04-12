@@ -51,6 +51,8 @@ This packet teaches an agent how to:
 - `OpenHands/extensions`: `closed-not-accepted`
   - submission ref: `https://github.com/OpenHands/extensions/pull/163`
   - maintainer note: distribute a custom `marketplace.json` instead of expecting an upstream listing
+- `awesome-opencode`: `not_honest_cargo_yet`
+  - exact blocker: this packet is a host-native skill folder for a CLI-first docs export lane, not an honest opencode-native project/resource entry today
 
 This packet is still a **secondary host-native lane**.
 It does not replace the current `CLI-first` primary surface.
@@ -60,6 +62,7 @@ It does not replace the current `CLI-first` primary surface.
 - no hosted documentation export platform
 - no listed-live Goose or agent-skill.co entry without fresh read-back
 - no listed-live OpenHands/extensions entry; that lane was closed rather than accepted
+- no awesome-opencode project/resource claim; current cargo is still not honest for that lane
 - no MCP-first product positioning
 
 ## Source of truth
