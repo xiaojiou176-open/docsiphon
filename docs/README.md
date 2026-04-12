@@ -24,6 +24,8 @@ primary surface.
 
 - Full README:
   [GitHub repository front door](https://github.com/xiaojiou176-open/docsiphon#readme)
+- Distribution packet ledger:
+  [repo packet map](./distribution-packet-ledger.md)
 - Pages home:
   [Docs landing page](https://xiaojiou176-open.github.io/docsiphon/)
 - Pages repo map:

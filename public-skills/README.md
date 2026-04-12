@@ -12,6 +12,11 @@ These packets are **secondary lanes** for host ecosystems that want a
 self-contained folder describing how to run Docsiphon safely and inspect the
 resulting export artifacts.
 
+The repo-wide packet map lives at
+[`docs/distribution-packet-ledger.md`](../docs/distribution-packet-ledger.md).
+Use that page when you need to keep the CLI-first flagship packet separate from
+these host-native side lanes.
+
 Current packet inventory:
 
 - [`docsiphon-doc-corpus-operator/`](./docsiphon-doc-corpus-operator/README.md)
