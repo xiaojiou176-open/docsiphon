@@ -275,6 +275,7 @@ def collect_docs_surface_errors(repo_root: Path) -> list[str]:
     docs_root = repo_root / "docs"
     allowed_docs_files = {
         "README.md",
+        "distribution-packet-ledger.md",
         "index.md",
         "roadmap.md",
         "_config.yml",
