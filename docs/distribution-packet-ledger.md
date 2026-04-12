@@ -26,7 +26,7 @@ cases, not hidden engines that turn the repo into a different product.
 | --- | --- | --- | --- |
 | Flagship CLI-first packet | `README.md`, `docs/README.md`, `examples/README.md`, `.github/release-body-v0.1.2.md` | active front door | hosted runtime, container product, or MCP-first identity |
 | Release shelf packet | release `v0.1.2` assets referenced from `README.md` and `examples/README.md` | published shelf | newest `main` wording or future secondary lanes |
-| Host-native secondary packet | `public-skills/README.md`, `public-skills/docsiphon-doc-corpus-operator/README.md`, `public-skills/docsiphon-doc-corpus-operator/manifest.yaml` | packet-ready; ClawHub live, OpenHands review-pending | repo-wide surface change or runtime/container fit |
+| Host-native secondary packet | `public-skills/README.md`, `public-skills/docsiphon-doc-corpus-operator/README.md`, `public-skills/docsiphon-doc-corpus-operator/manifest.yaml` | packet-ready; ClawHub live, Goose review-pending, agent-skill.co blocked upstream, OpenHands closed-not-accepted | repo-wide surface change or runtime/container fit |
 
 ## Current lane truth
 

@@ -118,6 +118,7 @@ class TestScripts(unittest.TestCase):
     def test_docs_tree_contains_current_pages_surface(self):
         docs_root = Path("docs")
         self.assertTrue((docs_root / "README.md").exists())
+        self.assertTrue((docs_root / "distribution-packet-ledger.md").exists())
         self.assertTrue((docs_root / "index.md").exists())
         self.assertTrue((docs_root / "roadmap.md").exists())
         self.assertTrue((docs_root / "_config.yml").exists())
@@ -126,7 +127,17 @@ class TestScripts(unittest.TestCase):
         self.assertTrue((docs_root / "sitemap.xml").exists())
         self.assertEqual(
             {p.name for p in docs_root.iterdir()},
-            {"README.md", "index.md", "roadmap.md", "_config.yml", "_layouts", "repo-map.md", "robots.txt", "sitemap.xml"},
+            {
+                "README.md",
+                "distribution-packet-ledger.md",
+                "index.md",
+                "roadmap.md",
+                "_config.yml",
+                "_layouts",
+                "repo-map.md",
+                "robots.txt",
+                "sitemap.xml",
+            },
         )
 
     def test_public_visual_assets_exist(self):
@@ -200,18 +211,24 @@ class TestScripts(unittest.TestCase):
         skill = self._read(str(packet_root / "SKILL.md"))
         manifest = self._read(str(packet_root / "manifest.yaml"))
         self.assertIn("listed-live", inventory)
-        self.assertIn("review-pending", inventory)
+        self.assertIn("Goose Skills Marketplace", inventory)
+        self.assertIn("closed-not-accepted", inventory)
         self.assertIn("host-native public skill packet", readme)
         self.assertIn("CLI-first", readme)
-        self.assertIn("OpenHands/extensions", readme)
+        self.assertIn("Goose Skills Marketplace", readme)
+        self.assertIn("agent-skill.co source repo", readme)
         self.assertIn("listed-live", readme)
-        self.assertIn("review-pending", readme)
+        self.assertIn("closed-not-accepted", readme)
         self.assertIn("host-native secondary lane", skill)
         self.assertIn("listed-live", skill)
-        self.assertIn("review-pending", skill)
+        self.assertIn("Goose Skills Marketplace", skill)
+        self.assertIn("closed-not-accepted", skill)
         self.assertIn("schema_version: 1", manifest)
         self.assertIn("docsiphon-doc-corpus-operator", manifest)
-        self.assertIn("ClawHub listed-live; OpenHands/extensions review-pending.", manifest)
+        self.assertIn(
+            "ClawHub listed-live; Goose review-pending; agent-skill.co blocked by external Vercel authorization; OpenHands/extensions closed-not-accepted.",
+            manifest,
+        )
 
     def test_release_body_mentions_docs_and_profiles(self):
         content = self._read(".github/release-body-v0.1.2.md")

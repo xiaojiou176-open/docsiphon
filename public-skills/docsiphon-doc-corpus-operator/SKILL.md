@@ -27,7 +27,9 @@ inspect the resulting export artifacts from a repo checkout or `uvx` path.
 ## Current registry truth
 
 - `ClawHub`: `listed-live`
-- `OpenHands/extensions`: `review-pending`
+- `Goose Skills Marketplace`: `review-pending` via `https://github.com/block/agent-skills/pull/24`
+- `agent-skill.co source repo`: `platform-not-accepted-yet` via `https://github.com/heilcheng/awesome-agent-skills/pull/180`
+- `OpenHands/extensions`: `closed-not-accepted`; maintainer recommended a custom `marketplace.json` distribution instead
 
 ## First-success flow
 

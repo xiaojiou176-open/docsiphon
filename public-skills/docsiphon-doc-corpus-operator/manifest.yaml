@@ -13,17 +13,28 @@ registry_targets:
     status: listed-live
     package_shape: skill-folder
     read_back: https://clawhub.ai/api/v1/skills/docsiphon-doc-corpus-operator
-  openhands-extensions:
+  goose-skills-marketplace:
     status: review-pending
     package_shape: skill-folder
+    submission_ref: https://github.com/block/agent-skills/pull/24
+  agent-skill-index:
+    status: platform-not-accepted-yet
+    package_shape: index-entry
+    submission_ref: https://github.com/heilcheng/awesome-agent-skills/pull/180
+    blocker: External Vercel team authorization is still required before the source repo can finish its preview/deploy path.
+  openhands-extensions:
+    status: closed-not-accepted
+    package_shape: skill-folder
     submission_ref: https://github.com/OpenHands/extensions/pull/163
+    blocker: Maintainer closed the lane and pointed contributors to a custom marketplace.json distribution alternative instead of an upstream listing.
 
 boundaries:
   product_identity: CLI-first documentation corpus export packet for Docsiphon.
   canonical_repo_version: 0.1.2
-  listing_state_summary: ClawHub listed-live; OpenHands/extensions review-pending.
+  listing_state_summary: ClawHub listed-live; Goose review-pending; agent-skill.co blocked by external Vercel authorization; OpenHands/extensions closed-not-accepted.
   not_claimed:
-    - No listed-live OpenHands/extensions entry exists yet
+    - No listed-live Goose or agent-skill.co entry exists yet
+    - No listed-live OpenHands/extensions entry exists; that lane was closed instead
     - No hosted docs export platform exists yet
     - No MCP-first product claim exists yet
 
