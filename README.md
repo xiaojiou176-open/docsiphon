@@ -14,7 +14,7 @@ for retrieval, eval, and offline documentation work.
 **Not for:** fully generic website mirroring, JS-heavy browser automation, or
 pixel-perfect site archiving.
 
-[First Success](#first-success-in-one-command) · [Proof Ladder](#proof-ladder) · [Repo Map](./docs/README.md) · [Examples](./examples/README.md) · [Latest Release](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
+[First Success](#first-success-in-one-command) · [Proof Ladder](#proof-ladder) · [Distribution Packet Ledger](./docs/distribution-packet-ledger.md) · [Repo Map](./docs/README.md) · [Examples](./examples/README.md) · [Latest Release](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
 
 ![Docsiphon hero showing scoped documentation export, preserved Markdown tree, and audit artifacts](./assets/docsiphon-hero.svg)
 

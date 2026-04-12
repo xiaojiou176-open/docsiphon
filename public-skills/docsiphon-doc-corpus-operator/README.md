@@ -43,7 +43,14 @@ This packet teaches an agent how to:
 ## Current registry truth
 
 - `ClawHub`: `listed-live`
-- `OpenHands/extensions`: `review-pending`
+- `Goose Skills Marketplace`: `review-pending`
+  - submission ref: `https://github.com/block/agent-skills/pull/24`
+- `agent-skill.co source repo`: `platform-not-accepted-yet`
+  - submission ref: `https://github.com/heilcheng/awesome-agent-skills/pull/180`
+  - external blocker: Vercel team authorization is still pending upstream
+- `OpenHands/extensions`: `closed-not-accepted`
+  - submission ref: `https://github.com/OpenHands/extensions/pull/163`
+  - maintainer note: distribute a custom `marketplace.json` instead of expecting an upstream listing
 
 This packet is still a **secondary host-native lane**.
 It does not replace the current `CLI-first` primary surface.
@@ -51,7 +58,8 @@ It does not replace the current `CLI-first` primary surface.
 ## What this packet must not claim
 
 - no hosted documentation export platform
-- no listed-live OpenHands/extensions entry yet
+- no listed-live Goose or agent-skill.co entry without fresh read-back
+- no listed-live OpenHands/extensions entry; that lane was closed rather than accepted
 - no MCP-first product positioning
 
 ## Source of truth
