@@ -213,20 +213,23 @@ class TestScripts(unittest.TestCase):
         self.assertIn("listed-live", inventory)
         self.assertIn("Goose Skills Marketplace", inventory)
         self.assertIn("closed-not-accepted", inventory)
+        self.assertIn("awesome-opencode", inventory)
         self.assertIn("host-native public skill packet", readme)
         self.assertIn("CLI-first", readme)
         self.assertIn("Goose Skills Marketplace", readme)
         self.assertIn("agent-skill.co source repo", readme)
         self.assertIn("listed-live", readme)
         self.assertIn("closed-not-accepted", readme)
+        self.assertIn("awesome-opencode", readme)
         self.assertIn("host-native secondary lane", skill)
         self.assertIn("listed-live", skill)
         self.assertIn("Goose Skills Marketplace", skill)
         self.assertIn("closed-not-accepted", skill)
+        self.assertIn("awesome-opencode", skill)
         self.assertIn("schema_version: 1", manifest)
         self.assertIn("docsiphon-doc-corpus-operator", manifest)
         self.assertIn(
-            "ClawHub listed-live; Goose review-pending; agent-skill.co blocked by external Vercel authorization; OpenHands/extensions closed-not-accepted.",
+            "ClawHub listed-live; Goose review-pending; agent-skill.co blocked by external Vercel authorization; OpenHands/extensions closed-not-accepted; awesome-opencode not_honest_cargo_yet.",
             manifest,
         )
 

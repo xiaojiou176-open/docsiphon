@@ -59,6 +59,7 @@ PUBLIC_SKILL_PACKET_REQUIRED_SNIPPETS = {
         "listed-live",
         "Goose Skills Marketplace",
         "closed-not-accepted",
+        "awesome-opencode",
     ),
     f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/README.md": (
         "host-native public skill packet",
@@ -67,6 +68,7 @@ PUBLIC_SKILL_PACKET_REQUIRED_SNIPPETS = {
         "agent-skill.co source repo",
         "listed-live",
         "closed-not-accepted",
+        "awesome-opencode",
     ),
     f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/SKILL.md": (
         "host-native secondary lane",
@@ -74,11 +76,12 @@ PUBLIC_SKILL_PACKET_REQUIRED_SNIPPETS = {
         "Goose Skills Marketplace",
         "listed-live",
         "closed-not-accepted",
+        "awesome-opencode",
     ),
     f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/manifest.yaml": (
         "schema_version: 1",
         "docsiphon-doc-corpus-operator",
-        "ClawHub listed-live; Goose review-pending; agent-skill.co blocked by external Vercel authorization; OpenHands/extensions closed-not-accepted.",
+        "ClawHub listed-live; Goose review-pending; agent-skill.co blocked by external Vercel authorization; OpenHands/extensions closed-not-accepted; awesome-opencode not_honest_cargo_yet.",
     ),
     f"public-skills/{PUBLIC_SKILL_PACKET_SLUG}/references/README.md": (
         "CLI-first",
