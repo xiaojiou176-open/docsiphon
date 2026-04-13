@@ -30,7 +30,7 @@ dependencies = [
   "requests>=2.33.0",
   "chardet<8",
   "beautifulsoup4>=4.12.2",
-  "markdownify>=0.12.1",
+  "markdownify>=1.2.2",
   "readability-lxml>=0.8.1",
   "trafilatura>=1.9.0",
   "tomli>=2.0.1",
