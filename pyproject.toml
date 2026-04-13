@@ -41,7 +41,7 @@ docsiphon = "docsiphon.cli:main"
 
 [dependency-groups]
 dev = [
-  "pre-commit>=4.3.0",
+  "pre-commit>=4.5.1",
   "pytest>=8.4.2",
 ]
 
