@@ -24,8 +24,6 @@ primary surface.
 
 - Full README:
   [GitHub repository front door](https://github.com/xiaojiou176-open/docsiphon#readme)
-- Distribution packet ledger:
-  [repo packet map](./distribution-packet-ledger.md)
 - Pages home:
   [Docs landing page](https://xiaojiou176-open.github.io/docsiphon/)
 - Pages repo map:
@@ -34,6 +32,8 @@ primary surface.
   [Roadmap](https://xiaojiou176-open.github.io/docsiphon/roadmap/)
 - Latest public release:
   [Release entrypoint](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
+- Second-ring packet ledger:
+  [repo packet map](./distribution-packet-ledger.md)
 
 ## Release Shelf Truth
 

@@ -14,7 +14,7 @@ for retrieval, eval, and offline documentation work.
 **Not for:** fully generic website mirroring, JS-heavy browser automation, or
 pixel-perfect site archiving.
 
-[First Success](#first-success-in-one-command) · [Proof Ladder](#proof-ladder) · [Distribution Packet Ledger](./docs/distribution-packet-ledger.md) · [Repo Map](./docs/README.md) · [Examples](./examples/README.md) · [Latest Release](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
+[First Success](#first-success-in-one-command) · [Repo Map](./docs/README.md) · [Examples](./examples/README.md) · [Latest Release](https://github.com/xiaojiou176-open/docsiphon/releases/latest)
 
 ![Docsiphon hero showing scoped documentation export, preserved Markdown tree, and audit artifacts](./assets/docsiphon-hero.svg)
 
@@ -25,9 +25,10 @@ audit artifacts you can hand to another operator._
 [![CI](https://img.shields.io/github/actions/workflow/status/xiaojiou176-open/docsiphon/ci.yml?branch=main&label=ci)](https://github.com/xiaojiou176-open/docsiphon/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-0f172a?labelColor=111827&color=f59e0b)](./LICENSE)
 
-> If you build retrieval, eval, or offline doc pipelines, star this repo now.
-> It is the kind of tool you do not need every day, but you will want to find
-> instantly the next time a vendor docsite becomes your ingestion problem.
+> Start here if your problem is "I need a reviewable docs corpus on disk, not
+> just fetched pages."
+> Skip this repo if you actually need a general website mirror, browser
+> automation stack, or pixel-perfect archive.
 
 ## First Success In One Command
 
@@ -58,6 +59,17 @@ After the command finishes, you should see three concrete signals right away:
 
 For the longer explanation, copyable profiles, and troubleshooting path,
 continue to [Quickstart](#quickstart).
+
+## Open The Right Next Door
+
+Once the first run works, do not keep scrolling blindly. Use the next door that
+matches the question you actually have:
+
+| If you want to... | Open this next | Why |
+| --- | --- | --- |
+| reuse a ready-made profile | [`examples/README.md`](./examples/README.md) | this is the shortest path to copyable TOML profiles |
+| understand the repo surface and support boundary | [`docs/README.md`](./docs/README.md) | it is the repo map, not a second marketing page |
+| verify contributor commands and local gates | [`CONTRIBUTING.md`](./CONTRIBUTING.md) | maintainer verification belongs there, not in the quickstart |
 
 ## Proof Ladder
 
@@ -109,7 +121,7 @@ If you want a fast filter before reading deeper, start with this table:
 | Primary surface | `CLI-first` |
 | Current flagship public packet | GitHub repo front door + `uvx` quickstart + release assets / example profiles |
 | What success looks like | scoped export + preserved file tree + audit artifacts |
-| What not to assume | This is not a universal website mirror or a browser-heavy product archiver |
+| What it must never be reduced to | a universal website mirror, browser-heavy crawler, or product-site archiver |
 
 ## Current Product Boundary
 
@@ -206,6 +218,10 @@ truth on `main`:
 These are related, but they are not the same shelf. A future `main` commit can
 move the docs, governance, or Pages truth forward before a new tagged release
 is cut.
+
+Need packet or listing truth after the front door is already clear? Use
+[`docs/distribution-packet-ledger.md`](./docs/distribution-packet-ledger.md) as
+the second-ring ledger instead of treating it like a first-screen CTA.
 
 ### If The First Run Does Not Work
 
